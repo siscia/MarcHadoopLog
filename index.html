@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+	</head>
+	<body>
+
+	<form>
+		<select>
+			<option value="1"> 1 </option>
+			<option value="2"> 2 </option>
+			<option value="3"> 3 </option>
+			<option value="4"> 4 </option>
+		</select>
+		<select>
+			<option value="1048576"> 1048576 </option>
+			<option value="1572864"> 1572864 </option>
+			<option value="2097152"> 2097152 </option>
+		</select>
+		<select>
+			<option value="200000000"> 200000000 </option>
+			<option value="300000000"> 300000000 </option>
+			<option value="400000000"> 400000000 </option>
+			<option value="500000000"> 500000000 </option>
+		</select>
+		<select>
+			<option value="0.05"> 0.05 </option>
+		</select>
+		<input type="button" value="Graph" onclick="graph(this)"></input>
+	</form>
+
+<script>
+
+var xLength = 600
+var yLength = 300
+
+function dataUrl(redudancies, blocksize, dimension, start){
+	return "https://raw.githubusercontent.com/siscia/MarcHadoopLog/master/host1/marc_log/terasort/data/" + redudancies + "_" + blocksize + "_" + dimension + "_" + start + ".csv";
+}
+
+var svgContainer = d3.select("body")
+			.append("svg")
+			.attr("width", xLength)
+			.attr("height", yLength);
+			
+function graph(button){
+	form = button.parentNode;
+	red = form[0].value;
+	blocksize = form[1].value;
+	dimension = form[2].value;
+	start = form[3].value;
+	d3.csv(dataUrl(red, blocksize, dimension, start))
+		.row(function(d) { 
+			d.map = +d.map; 
+			d.reduce = +d.reduce;
+			d.total = d.map + d.reduce;  
+			d.timestamp = new Date(+d.timestamp * 1000); 		
+			return d;})
+	.get(ready);
+}
+
+function ready(error, data){
+	if (error) throw error;
+
+	console.log(data[0])
+	console.log(data[data.length-1])
+
+	var xScale = d3.time.scale()
+			.domain([data[0].timestamp, data[data.length - 1].timestamp])
+			.range([0, xLength]);
+
+	var yScale = d3.scale.linear()
+			.domain([data[0].total, data[data.length - 1].total])
+			.range([yLength, 0]);
+
+	var mapFunction = d3.svg.line()
+			.x(function(d) {
+				return xScale(d.timestamp);})
+			.y(function(d) {
+				return yScale(d.map);})
+			.interpolate("linear");
+
+	var reduceFunction = d3.svg.line()
+			.x(function(d) {
+				return xScale(d.timestamp);})
+			.y(function(d) {
+				return yScale(d.reduce);})
+			.interpolate("linear");
+
+	var totalFunction = d3.svg.line()
+			.x(function(d) {
+				return xScale(d.timestamp);})
+			.y(function(d) {
+				return yScale(d.total);})
+			.interpolate("linear");
+
+	svgContainer.selectAll("*").remove();
+
+	svgContainer.append("g")
+			.append("path")
+			.attr("d", totalFunction(data))
+			.attr("stroke", "blue")
+			.attr("stroke-width", 2)
+			.attr("fill", "none");
+
+	svgContainer.append("g")
+			.append("path")
+			.attr("d", mapFunction(data))
+			.attr("stroke", "red")
+			.attr("stroke-width", 2)
+			.attr("fill", "none");
+
+	svgContainer.append("g")
+			.append("path")
+			.attr("d", reduceFunction(data))
+			.attr("stroke", "green")
+			.attr("stroke-width", 2)
+			.attr("fill", "none");
+}
+
+</script>
+	</body>
+</html>
