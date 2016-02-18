@@ -53,7 +53,6 @@ function central_position(array, total) {
 	for (i = 0; i < array.length ; i++){
 		positions.push((total-total_length)/2 + unit*(i+0.5));
 	}
-	console.log(positions);
 	return positions;
 };
 
@@ -109,6 +108,7 @@ function ready(error, data){
 		blocksize.add(data[d].blocksize);
 		dimension.add(data[d].dimension);
 		startReduce.add(data[d].start_reduce_percentage);
+		console.log(data[d])
 	}
 	
 	uniques.replication = Array.from(replication).sort();
@@ -149,8 +149,6 @@ function ready(error, data){
 	var color_scale = d3.scale.linear()
 			.domain([minTime, maxTime])
 			.range(["green", "red"])
-
-	console.log(foci.replication[1])
 
 	
 	var rep = JSON.parse(JSON.stringify(data));
@@ -197,8 +195,6 @@ function ready(error, data){
 			return per[d];}());
 	}
 
-	console.log(nodes);
-
 	for (p in replication_position) {
 		svgContainer.append("text")
 			.text(uniques.replication[p])
@@ -236,7 +232,6 @@ function ready(error, data){
 		//.size([xLength, yLength])
 		.on("tick", tick);
 
-
 	function tick(e) {
 		var k = 0.3 * e.alpha;
 
@@ -250,8 +245,6 @@ function ready(error, data){
 			.attr("cx", function(d) {return d.x;})
 			.attr("cy", function(d) {return d.y;});
 	};
-
-	console.log(foci);
 
 	force.start();	
 
