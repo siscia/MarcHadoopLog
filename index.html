@@ -161,6 +161,13 @@ function ready(error, data){
 	svgContainer.select(".legendOrdinal")
   			.call(legendOrdinal);
 
+	svgContainer.append("text")
+			.text("lalala")
+			.attr("x", function(){
+				return 0.2*xLenght;})
+			.attr("y", function(){
+				return yLenght/2;})
+	
 	var xAxis = d3.svg.axis()
 			.scale(xScale)
 
