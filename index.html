@@ -162,19 +162,14 @@ function ready(error, data){
   			.call(legendOrdinal);
 
 	svgContainer.append("text")
-			.text("lalala")
+			.text("Total Duration: " + 
+				((data[data.length - 1].timestamp - data[0].timestamp)/(1000 * 60)).toFixed(2)  + 
+				" min")
 			.attr("x", function(){
-				return 0.2*xLenght;})
+				return 0.01*xLength;})
 			.attr("y", function(){
-				return yLenght/2;})
+				return yLength/2.8;});
 	
-	var xAxis = d3.svg.axis()
-			.scale(xScale)
-
-	svgContainer.append("g")
-			.call(xAxis)
-
-
 }
 
 </script>
