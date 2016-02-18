@@ -154,15 +154,19 @@ function ready(error, data){
   			.attr("transform", "translate(20,20)");
 
 	var legendOrdinal = d3.legend.color()
-  //d3 symbol creates a path-string, for example
-  //"M0,-8.059274488676564L9.306048591020996,
-  //8.059274488676564 -9.306048591020996,8.059274488676564Z"
   		.shape("path", d3.svg.symbol().type("triangle-up").size(150)())
   		.shapePadding(10)
   		.scale(legend_scale);
-
+	
 	svgContainer.select(".legendOrdinal")
   			.call(legendOrdinal);
+
+	var xAxis = d3.svg.axis()
+			.scale(xScale)
+
+	svgContainer.append("g")
+			.call(xAxis)
+
 
 }
 
