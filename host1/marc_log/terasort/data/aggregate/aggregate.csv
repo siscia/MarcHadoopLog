@@ -94,4 +94,3 @@ replication,blocksize,dimension,start_reduce_percentage,start_time,start_reduce,
 2,1572864,500000000,0.5,1455381209,1455388484,1455398961,17752
 1,1572864,200000000,0.05,1454321616,1454322160,1454329689,8073
 3,1572864,200000000,0.5,1455517970,1455520817,1455525562,7592
-replication,blocksize,dimension,start_reduce_percentage,start_time,start_reduce,end_time,total_time
