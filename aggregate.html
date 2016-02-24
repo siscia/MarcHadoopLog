@@ -16,8 +16,8 @@
 
 <script>
 
-var xLength = 1200
-var yLength = 650
+var xLength = 1600
+var yLength = 800
 var padding = 0.2
 
 function getRandomInt() {
@@ -108,13 +108,14 @@ function ready(error, data){
 		blocksize.add(data[d].blocksize);
 		dimension.add(data[d].dimension);
 		startReduce.add(data[d].start_reduce_percentage);
-		console.log(data[d])
 	}
 	
 	uniques.replication = Array.from(replication).sort();
-	uniques.blocksize = Array.from(blocksize).sort();
+	uniques.blocksize = Array.from(blocksize).sort(function(a,b){return a-b;});
 	uniques.dimension = Array.from(dimension).sort();
 	uniques.startReduce = Array.from(startReduce).sort();	
+
+	console.log(uniques.blocksize)
 
 	var replication_position = central_position(uniques.replication, yLength);
 	for (p in replication_position) {
@@ -144,7 +145,7 @@ function ready(error, data){
 	
 	var radius_scale = d3.scale.linear()
 			.domain([minTime, maxTime])
-			.range([1, 20]);
+			.range([1, 30]);
 
 	var color_scale = d3.scale.linear()
 			.domain([minTime, maxTime])
