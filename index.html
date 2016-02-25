@@ -32,6 +32,9 @@
 					<option value="1048576"> 1048576 </option>
 					<option value="1572864"> 1572864 </option>
 					<option value="2097152"> 2097152 </option>
+					<option value="66560000"> 66560000 </option>
+					<option value="133120000"> 133120000 </option>
+					<option value="134217728"> 134217728 </option>
 				</select>
 			</div>
 			<div class="two columns">
@@ -150,6 +153,25 @@ function ready(error, data){
 			.attr("stroke", "green")
 			.attr("stroke-width", 2)
 			.attr("fill", "none");
+
+	svgContainer.append("g")
+			.append("line")
+			.attr("x1", xScale(data[0].timestamp))
+			.attr("y1", yScale(33))
+			.attr("x2", xScale(data[data.length - 1].timestamp))
+			.attr("y2", yScale(33))
+			.attr("stroke", "black")
+			.attr("stroke-width", 1);
+
+	
+	svgContainer.append("g")
+			.append("line")
+			.attr("x1", xScale(data[0].timestamp))
+			.attr("y1", yScale(66))
+			.attr("x2", xScale(data[data.length - 1].timestamp))
+			.attr("y2", yScale(66))
+			.attr("stroke", "black")
+			.attr("stroke-width", 1);
 
 	svgContainer.append("g")
   			.attr("class", "legendOrdinal")
