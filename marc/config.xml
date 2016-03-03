@@ -93,6 +93,10 @@
 		    <threshold>200</threshold>
 		</stop-at>
 	    </charge>
+	    <clock>1</clock>
+	    <max-ticks>1000000</max-ticks>
+	    <level_size>99</level_size>
+	    <simulation_limit>100</simulation_limit>
 	</phase3>
     </phases>
 </configuration>
