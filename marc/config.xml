@@ -1,4 +1,4 @@
-<configurations xmlns="http://mpower.necst.it/marc/configuration">
+<configurations xmlns="http://mpower.necst.it/marc/configuration.xsd">
     <job>
 	<name>HadoopAnalysis</name>
 	<owner>Simone</owner>
