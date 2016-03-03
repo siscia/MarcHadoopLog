@@ -1,9 +1,10 @@
-<configuration>
+<configurations xmlns="http://mpower.necst.it/marc/configuration">
     <job>
 	<name>HadoopAnalysis</name>
 	<owner>Simone</owner>
     </job>
     <computation-unit>simone0001</computation-unit>
+    <dataset>marc_input</dataset>
     <phases>
 	<phase0>
 	    <mappings>
@@ -70,19 +71,20 @@
 		    </feature>
 		</features>
 	    </mappings>
-	    <timestamp-features ref="time">
+	    <timestamp-features ref="time"/>
 	</phase0>
 	<phase2a>
 	    <configuration>
-		<target-features ref="blocksize">
-		<target-features ref="dimension">
-		<target-features ref="start_reduce_percentage">
-		<target-features ref="workload">
-		<output-features red="total">
+		<target-features ref="blocksize"/>
+		<target-features ref="dimension"/>
+		<target-features ref="start_reduce_percentage"/>
+		<target-features ref="workload"/>
+		<output-features red="total"/>
 	    </configuration>
 	    <lags>
 		<ar>1</ar>
 	    </lags>
+	    <timestamp-splitting-diff>2</timestamp-splitting-diff>
 	</phase2a>
 	<phase3>
 	    <charge>
@@ -99,4 +101,4 @@
 	    <simulation_limit>100</simulation_limit>
 	</phase3>
     </phases>
-</configuration>
+</configurations>
