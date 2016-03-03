@@ -71,21 +71,27 @@
 		    </feature>
 		</features>
 	    </mappings>
-	    <timestamp-features ref="time"/>
+	    <timestamp-feature ref="time"/>
 	</phase0>
+	<phase1>
+	    <manipulation></manipulation>
+	</phase1>
 	<phase2a>
 	    <configuration>
-		<target-features ref="blocksize"/>
-		<target-features ref="dimension"/>
-		<target-features ref="start_reduce_percentage"/>
-		<target-features ref="workload"/>
-		<output-features red="total"/>
+		<target-feature ref="blocksize"/>
+		<target-feature ref="dimension"/>
+		<target-feature ref="start_reduce_percentage"/>
+		<target-feature ref="workload"/>
+		<output-feature ref="total"/>
 	    </configuration>
 	    <lags>
 		<ar>1</ar>
+		<ex>0</ex>
 	    </lags>
 	    <timestamp-splitting-diff>2</timestamp-splitting-diff>
 	</phase2a>
+	<phase2b></phase2b>
+	<phase2c></phase2c>
 	<phase3>
 	    <charge>
 		<start-from>
@@ -102,3 +108,4 @@
 	</phase3>
     </phases>
 </configurations>
+
