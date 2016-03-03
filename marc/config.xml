@@ -74,10 +74,11 @@
 	</phase0>
 	<phase2a>
 	    <configuration>
-		<target-feauter ref="blocksize">
-		<target-feauter ref="dimension">
-		<target-feauter ref="start_reduce_percentage">
-		<target-feauter ref="workload">
+		<target-features ref="blocksize">
+		<target-features ref="dimension">
+		<target-features ref="start_reduce_percentage">
+		<target-features ref="workload">
+		<output-features red="total">
 	    </configuration>
 	    <lags>
 		<ar>1</ar>
