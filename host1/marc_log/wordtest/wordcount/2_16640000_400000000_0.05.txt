@@ -1,0 +1,103 @@
+16/03/03 03:01:12| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/03/03 03:01:13| Total input paths to process : 1
+16/03/03 03:01:13| number of splits:25
+16/03/03 03:01:14| mapred.reduce.tasks is deprecated. Instead, use mapreduce.job.reduces
+16/03/03 03:01:14| Submitting tokens for job: job_1454085119865_0877
+16/03/03 03:01:14| Submitted application application_1454085119865_0877
+16/03/03 03:01:14| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1454085119865_0877/
+16/03/03 03:01:14| Running job: job_1454085119865_0877
+16/03/03 03:01:24| Job job_1454085119865_0877 running in uber mode : false
+16/03/03 03:01:24|  map 0% reduce 0%
+16/03/03 03:01:38|  map 8% reduce 0%
+16/03/03 03:01:42|  map 21% reduce 0%
+16/03/03 03:01:43|  map 51% reduce 0%
+16/03/03 03:01:45|  map 55% reduce 0%
+16/03/03 03:01:48|  map 60% reduce 0%
+16/03/03 03:01:50|  map 72% reduce 0%
+16/03/03 03:01:56|  map 72% reduce 4%
+16/03/03 03:01:58|  map 72% reduce 6%
+16/03/03 03:02:00|  map 72% reduce 10%
+16/03/03 03:02:01|  map 72% reduce 12%
+16/03/03 03:02:02|  map 72% reduce 14%
+16/03/03 03:02:03|  map 72% reduce 18%
+16/03/03 03:02:04|  map 72% reduce 24%
+16/03/03 03:02:08|  map 76% reduce 24%
+16/03/03 03:02:13|  map 76% reduce 25%
+16/03/03 03:02:18|  map 79% reduce 25%
+16/03/03 03:02:19|  map 81% reduce 25%
+16/03/03 03:02:22|  map 87% reduce 25%
+16/03/03 03:02:24|  map 89% reduce 25%
+16/03/03 03:02:25|  map 89% reduce 26%
+16/03/03 03:02:26|  map 92% reduce 27%
+16/03/03 03:02:29|  map 93% reduce 27%
+16/03/03 03:02:40|  map 95% reduce 27%
+16/03/03 03:02:42|  map 95% reduce 28%
+16/03/03 03:02:54|  map 96% reduce 28%
+16/03/03 03:02:57|  map 96% reduce 29%
+16/03/03 03:03:09|  map 97% reduce 29%
+16/03/03 03:03:10|  map 97% reduce 30%
+16/03/03 03:03:11|  map 100% reduce 30%
+16/03/03 03:03:12|  map 100% reduce 33%
+16/03/03 03:03:13|  map 100% reduce 43%
+16/03/03 03:03:14|  map 100% reduce 72%
+16/03/03 03:03:15|  map 100% reduce 84%
+16/03/03 03:03:16|  map 100% reduce 100%
+16/03/03 03:03:17| Job job_1454085119865_0877 completed successfully
+16/03/03 03:03:18| Counters: 51
+	File System Counters
+		FILE: Number of bytes read=32213839
+		FILE: Number of bytes written=68345153
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=411593872
+		HDFS: Number of bytes written=22544517
+		HDFS: Number of read operations=111
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=24
+	Job Counters 
+		Killed map tasks=6
+		Launched map tasks=31
+		Launched reduce tasks=12
+		Data-local map tasks=28
+		Rack-local map tasks=3
+		Total time spent by all maps in occupied slots (ms)=1007723
+		Total time spent by all reduces in occupied slots (ms)=1030882
+		Total time spent by all map tasks (ms)=1007723
+		Total time spent by all reduce tasks (ms)=1030882
+		Total vcore-seconds taken by all map tasks=1007723
+		Total vcore-seconds taken by all reduce tasks=1030882
+		Total megabyte-seconds taken by all map tasks=1031908352
+		Total megabyte-seconds taken by all reduce tasks=1055623168
+	Map-Reduce Framework
+		Map input records=9904
+		Map output records=37565620
+		Map output bytes=567743007
+		Map output materialized bytes=32215567
+		Input split bytes=3675
+		Combine input records=37565620
+		Combine output records=998746
+		Reduce input groups=736732
+		Reduce shuffle bytes=32215567
+		Reduce input records=998746
+		Reduce output records=736732
+		Spilled Records=1997492
+		Shuffled Maps =300
+		Failed Shuffles=0
+		Merged Map outputs=300
+		GC time elapsed (ms)=14828
+		CPU time spent (ms)=378130
+		Physical memory (bytes) snapshot=13037912064
+		Virtual memory (bytes) snapshot=55182741504
+		Total committed heap usage (bytes)=17752915968
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=411590197
+	File Output Format Counters 
+		Bytes Written=22544517

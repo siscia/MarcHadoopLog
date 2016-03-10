@@ -1,0 +1,103 @@
+16/03/06 05:01:25| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/03/06 05:01:26| Total input paths to process : 1
+16/03/06 05:01:26| number of splits:7
+16/03/06 05:01:26| mapred.reduce.tasks is deprecated. Instead, use mapreduce.job.reduces
+16/03/06 05:01:26| Submitting tokens for job: job_1454085119865_1295
+16/03/06 05:01:27| Submitted application application_1454085119865_1295
+16/03/06 05:01:27| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1454085119865_1295/
+16/03/06 05:01:27| Running job: job_1454085119865_1295
+16/03/06 05:01:34| Job job_1454085119865_1295 running in uber mode : false
+16/03/06 05:01:34|  map 0% reduce 0%
+16/03/06 05:01:46|  map 8% reduce 0%
+16/03/06 05:01:47|  map 16% reduce 0%
+16/03/06 05:01:52|  map 22% reduce 0%
+16/03/06 05:01:53|  map 27% reduce 0%
+16/03/06 05:01:56|  map 30% reduce 0%
+16/03/06 05:01:58|  map 32% reduce 0%
+16/03/06 05:02:01|  map 35% reduce 0%
+16/03/06 05:02:02|  map 41% reduce 0%
+16/03/06 05:02:05|  map 42% reduce 0%
+16/03/06 05:02:06|  map 47% reduce 0%
+16/03/06 05:02:07|  map 50% reduce 0%
+16/03/06 05:02:08|  map 52% reduce 0%
+16/03/06 05:02:11|  map 57% reduce 0%
+16/03/06 05:02:13|  map 58% reduce 0%
+16/03/06 05:02:16|  map 60% reduce 0%
+16/03/06 05:02:17|  map 65% reduce 0%
+16/03/06 05:02:20|  map 67% reduce 0%
+16/03/06 05:02:22|  map 68% reduce 0%
+16/03/06 05:02:25|  map 73% reduce 0%
+16/03/06 05:02:26|  map 76% reduce 0%
+16/03/06 05:02:27|  map 81% reduce 0%
+16/03/06 05:02:29|  map 93% reduce 0%
+16/03/06 05:02:30|  map 100% reduce 0%
+16/03/06 05:02:35|  map 100% reduce 17%
+16/03/06 05:02:36|  map 100% reduce 25%
+16/03/06 05:02:37|  map 100% reduce 33%
+16/03/06 05:02:38|  map 100% reduce 67%
+16/03/06 05:02:39|  map 100% reduce 75%
+16/03/06 05:02:52|  map 100% reduce 82%
+16/03/06 05:02:53|  map 100% reduce 90%
+16/03/06 05:02:55|  map 100% reduce 95%
+16/03/06 05:02:56|  map 100% reduce 97%
+16/03/06 05:02:58|  map 100% reduce 99%
+16/03/06 05:02:59|  map 100% reduce 100%
+16/03/06 05:03:00| Job job_1454085119865_1295 completed successfully
+16/03/06 05:03:00| Counters: 51
+	File System Counters
+		FILE: Number of bytes read=152272214
+		FILE: Number of bytes written=225195977
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=1102526322
+		HDFS: Number of bytes written=47382372
+		HDFS: Number of read operations=57
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=24
+	Job Counters 
+		Killed map tasks=2
+		Killed reduce tasks=1
+		Launched map tasks=9
+		Launched reduce tasks=13
+		Data-local map tasks=9
+		Total time spent by all maps in occupied slots (ms)=373665
+		Total time spent by all reduces in occupied slots (ms)=140384
+		Total time spent by all map tasks (ms)=373665
+		Total time spent by all reduce tasks (ms)=140384
+		Total vcore-seconds taken by all map tasks=373665
+		Total vcore-seconds taken by all reduce tasks=140384
+		Total megabyte-seconds taken by all map tasks=382632960
+		Total megabyte-seconds taken by all reduce tasks=143753216
+	Map-Reduce Framework
+		Map input records=26611
+		Map output records=100835307
+		Map output bytes=1520339997
+		Map output materialized bytes=71823939
+		Input split bytes=1043
+		Combine input records=103367923
+		Combine output records=4754871
+		Reduce input groups=1577939
+		Reduce shuffle bytes=71823939
+		Reduce input records=2222255
+		Reduce output records=1577939
+		Spilled Records=6977126
+		Shuffled Maps =84
+		Failed Shuffles=0
+		Merged Map outputs=84
+		GC time elapsed (ms)=5540
+		CPU time spent (ms)=486840
+		Physical memory (bytes) snapshot=5778075648
+		Virtual memory (bytes) snapshot=28824649728
+		Total committed heap usage (bytes)=9061793792
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=1102525279
+	File Output Format Counters 
+		Bytes Written=47382372

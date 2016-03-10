@@ -1,0 +1,91 @@
+16/03/04 18:51:29| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/03/04 18:51:30| Total input paths to process : 1
+16/03/04 18:51:30| number of splits:9
+16/03/04 18:51:30| mapred.reduce.tasks is deprecated. Instead, use mapreduce.job.reduces
+16/03/04 18:51:31| Submitting tokens for job: job_1454085119865_1055
+16/03/04 18:51:31| Submitted application application_1454085119865_1055
+16/03/04 18:51:31| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1454085119865_1055/
+16/03/04 18:51:31| Running job: job_1454085119865_1055
+16/03/04 18:51:38| Job job_1454085119865_1055 running in uber mode : false
+16/03/04 18:51:38|  map 0% reduce 0%
+16/03/04 18:51:49|  map 7% reduce 0%
+16/03/04 18:51:51|  map 11% reduce 0%
+16/03/04 18:51:54|  map 14% reduce 0%
+16/03/04 18:51:55|  map 31% reduce 0%
+16/03/04 18:51:58|  map 33% reduce 0%
+16/03/04 18:52:04|  map 37% reduce 0%
+16/03/04 18:52:08|  map 50% reduce 0%
+16/03/04 18:52:14|  map 52% reduce 0%
+16/03/04 18:52:15|  map 53% reduce 0%
+16/03/04 18:52:17|  map 64% reduce 0%
+16/03/04 18:52:18|  map 67% reduce 0%
+16/03/04 18:52:20|  map 68% reduce 0%
+16/03/04 18:52:23|  map 69% reduce 0%
+16/03/04 18:52:26|  map 71% reduce 0%
+16/03/04 18:52:27|  map 89% reduce 0%
+16/03/04 18:52:28|  map 100% reduce 0%
+16/03/04 18:52:36|  map 100% reduce 25%
+16/03/04 18:52:37|  map 100% reduce 42%
+16/03/04 18:52:38|  map 100% reduce 75%
+16/03/04 18:52:48|  map 100% reduce 92%
+16/03/04 18:52:49|  map 100% reduce 99%
+16/03/04 18:52:50|  map 100% reduce 100%
+16/03/04 18:52:50| Job job_1454085119865_1055 completed successfully
+16/03/04 18:52:50| Counters: 51
+	File System Counters
+		FILE: Number of bytes read=116687342
+		FILE: Number of bytes written=174868390
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=821750780
+		HDFS: Number of bytes written=38853908
+		HDFS: Number of read operations=63
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=24
+	Job Counters 
+		Killed map tasks=3
+		Killed reduce tasks=1
+		Launched map tasks=12
+		Launched reduce tasks=13
+		Data-local map tasks=12
+		Total time spent by all maps in occupied slots (ms)=434310
+		Total time spent by all reduces in occupied slots (ms)=106144
+		Total time spent by all map tasks (ms)=434310
+		Total time spent by all reduce tasks (ms)=106144
+		Total vcore-seconds taken by all map tasks=434310
+		Total vcore-seconds taken by all reduce tasks=106144
+		Total megabyte-seconds taken by all map tasks=444733440
+		Total megabyte-seconds taken by all reduce tasks=108691456
+	Map-Reduce Framework
+		Map input records=19496
+		Map output records=75131318
+		Map output bytes=1134107474
+		Map output materialized bytes=56676977
+		Input split bytes=1314
+		Combine input records=76982899
+		Combine output records=3577796
+		Reduce input groups=1271445
+		Reduce shuffle bytes=56676977
+		Reduce input records=1726215
+		Reduce output records=1271445
+		Spilled Records=5304011
+		Shuffled Maps =108
+		Failed Shuffles=0
+		Merged Map outputs=108
+		GC time elapsed (ms)=10956
+		CPU time spent (ms)=389740
+		Physical memory (bytes) snapshot=6802722816
+		Virtual memory (bytes) snapshot=30854377472
+		Total committed heap usage (bytes)=10569121792
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=821749466
+	File Output Format Counters 
+		Bytes Written=38853908
