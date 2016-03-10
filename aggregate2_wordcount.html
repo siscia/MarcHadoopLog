@@ -25,7 +25,7 @@ function getRandomInt() {
 }
 
 function dataUrl(){
-	return "https://raw.githubusercontent.com/siscia/MarcHadoopLog/gh-pages/host1/marc_log/teratest/terasort/data/aggregate/aggregate.csv";
+	return "https://raw.githubusercontent.com/siscia/MarcHadoopLog/gh-pages/host1/marc_log/wordtest/wordcount/data/aggregate/aggregate.csv";
 }
 
 d3.csv(dataUrl())
@@ -80,6 +80,12 @@ svgContainer.append("text")
 	.attr("x", function() {return domain_scale("StartReducePercentage");})
 	.attr("y", function() {return 28;})
 
+function statistics(d){
+	var averange = d.reduce(function(sum, value){return sum + value;}) / d.length;
+	var std = d.reduce(function(soFar, next){
+		return soFar + Math.pow(next - averange, 2);}, 0) / (d.length - 1);
+	return [averange, std, Math.sqrt(std)];
+}
 
 
 function ready(error, data){
@@ -108,6 +114,48 @@ function ready(error, data){
 		blocksize.add(data[d].blocksize);
 		dimension.add(data[d].dimension);
 		startReduce.add(data[d].start_reduce_percentage);
+	}
+
+	var radius_scale = d3.scale.linear()
+			.domain([minTime, maxTime])
+			.range([1, 100]);
+
+	var color_scale = d3.scale.linear()
+			.domain([minTime, maxTime])
+			.range(["green", "red"])
+
+	function circle(container, coordinates, mean, std) {
+		container.append("g")
+			.append("circle")
+			.attr("cx", coordinates[0])
+			.attr("cy", coordinates[1])
+			.attr("r", radius_scale(mean))
+			.attr("fill-opacity", "0.01")
+			.attr("stroke", "black");
+
+	/*	container.append("g")
+			.append("circle")
+			.attr("cx", coordinates[0])
+			.attr("cy", coordinates[1])
+			.attr("r", radius_scale(mean - std))
+			.attr("fill-opacity", "0.01")
+			.attr("stroke", "black");
+
+		container.append("g")
+			.append("circle")
+			.attr("cx", coordinates[0])
+			.attr("cy", coordinates[1])
+			.attr("r", radius_scale(mean + std))
+			.attr("fill-opacity", "0.01")
+			.attr("stroke", "black");
+	*/
+		container.append("g")
+			.append("line")
+			.attr("x1", coordinates[0] - radius_scale(mean + std))
+			.attr("y1", coordinates[1])
+			.attr("x2", coordinates[0] - radius_scale(mean - std))
+			.attr("y2", coordinates[1])
+			.attr("stroke", "black");
 	}
 	
 	uniques.replication = Array.from(replication).sort();
@@ -141,60 +189,48 @@ function ready(error, data){
 	
 	};
 
-	var nodes = [];
+	for (p in blocksize_position) {
+		f = foci.blocksize[uniques.blocksize[p]];
+		to_plot = data
+				.filter(function(d){return d.blocksize == uniques.blocksize[p];})
+				.map(function(d){ return d.total_time;});
+		[mean, variance, std] = statistics(to_plot)
+		f = [f.cx, f.cy];
+		circle(svgContainer, f, mean, std)
+	}
+
+	for (p in replication_position) {
+		f = foci.replication[uniques.replication[p]];
+		to_plot = data
+				.filter(function(d){return d.replication == uniques.replication[p];})
+				.map(function(d){ return d.total_time;});
+		[mean, variance, std] = statistics(to_plot)
+		f = [f.cx, f.cy];
+		circle(svgContainer, f, mean, std)
+	}
+
+	for (p in dimension_position) {
+		f = foci.dimension[uniques.dimension[p]];
+		to_plot = data
+				.filter(function(d){return d.dimension == uniques.dimension[p];})
+				.map(function(d){ return d.total_time;});
+		[mean, variance, std] = statistics(to_plot)
+		f = [f.cx, f.cy];
+		circle(svgContainer, f, mean, std)
+	}
+
+	for (p in start_reduce_position) {
+		f = foci.start_reduce_percentage[uniques.startReduce[p]];
+		to_plot = data
+				.filter(function(d){return d.start_reduce_percentage == uniques.startReduce[p];})
+				.map(function(d){ return d.total_time;});
+		[mean, variance, std] = statistics(to_plot)
+		f = [f.cx, f.cy];
+		circle(svgContainer, f, mean, std)
+	}
+
+
 	
-	var radius_scale = d3.scale.linear()
-			.domain([minTime, maxTime])
-			.range([1, 30]);
-
-	var color_scale = d3.scale.linear()
-			.domain([minTime, maxTime])
-			.range(["green", "red"])
-
-	
-	var rep = JSON.parse(JSON.stringify(data));
-	for (d in rep) {
-		nodes.push(function() {
-			rep[d].type = "replication";
-			svgContainer.append("circle")
-				.data([rep[d]])
-				.attr("r", radius_scale(rep[d].total_time))
-				.attr("fill", color_scale(rep[d].total_time)); 
-			return rep[d];}());
-	}
-
-	var blck = JSON.parse(JSON.stringify(data));
-	for (d in blck) {
-		nodes.push(function() {
-			blck[d].type = "blocksize";
-			svgContainer.append("circle")
-				.data([blck[d]])
-				.attr("r", radius_scale(blck[d].total_time))
-				.attr("fill", color_scale(blck[d].total_time)); 
-			return blck[d];}());
-	}
-	
-	var dim = JSON.parse(JSON.stringify(data));
-	for (d in dim) {
-		nodes.push(function() {
-			dim[d].type = "dimension";
-			svgContainer.append("circle")
-				.data([dim[d]])
-				.attr("r", radius_scale(dim[d].total_time))
-				.attr("fill", color_scale(dim[d].total_time)); 
-			return dim[d];}());
-	}
-
-	var per = JSON.parse(JSON.stringify(data));
-	for (d in per) {
-		nodes.push(function() {
-			per[d].type = "start_reduce_percentage";
-			svgContainer.append("circle")
-				.data([per[d]])
-				.attr("r", radius_scale(per[d].total_time))
-				.attr("fill", color_scale(per[d].total_time)); 
-			return per[d];}());
-	}
 
 	for (p in replication_position) {
 		svgContainer.append("text")
@@ -224,33 +260,10 @@ function ready(error, data){
 			.attr("x", function() {return domain_scale("StartReducePercentage") + 100;})
 			.attr("y", function() {return start_reduce_position[p];})	
 	}
-	
-	var force = d3.layout.force()
-		.nodes(nodes)
-		.gravity(0)
-		//.links([])
-		//.charge(-50)
-		//.size([xLength, yLength])
-		.on("tick", tick);
-
-	function tick(e) {
-		var k = 0.3 * e.alpha;
-
-		nodes.forEach(function(o, i){
-			var to = foci[o.type][o[o.type]];
-			o.x += (to.cx - o.x) * k;
-			o.y += (to.cy - o.y) * k;
-		})
-
-		svgContainer.selectAll("circle")
-			.attr("cx", function(d) {return d.x;})
-			.attr("cy", function(d) {return d.y;});
-	};
-
-	force.start();	
 
 }
 
 </script>
 </body>
 </html>
+
