@@ -158,10 +158,10 @@ function ready(error, data){
 			.attr("stroke", "black");
 	}
 	
-	uniques.replication = Array.from(replication).sort();
+	uniques.replication = Array.from(replication).sort(function(a,b){return a-b;});
 	uniques.blocksize = Array.from(blocksize).sort(function(a,b){return a-b;});
-	uniques.dimension = Array.from(dimension).sort();
-	uniques.startReduce = Array.from(startReduce).sort();	
+	uniques.dimension = Array.from(dimension).sort(function(a,b){return a-b;});
+	uniques.startReduce = Array.from(startReduce).sort(function(a,b){return a-b;});	
 
 	console.log(uniques.blocksize)
 
