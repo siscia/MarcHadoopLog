@@ -13,44 +13,35 @@
 			<div class="one columns"> Replication </div>
 			<div class="two columns"> BlockSize </div>
 			<div class="two columns"> Dimension </div>
-			<div class="two columns"> Start Reduce </div>		
+			<div class="two columns"> Start Reduce </div>
+			<div class="two columns"> Workload </div>
 		</div>
 
 		<div class="row">
 
 		<form id="data_form">
 			<div class="one columns">
-				<select>
-					<option value="1"> 1 </option>
-					<option value="2"> 2 </option>
-					<option value="3"> 3 </option>
-					<option value="4"> 4 </option>
-				</select>
+				<div id="replication">
+				</div>
 			</div>
 			<div class="two columns">	
-				<select>
-					<option value="1048576"> 1048576 </option>
-					<option value="1572864"> 1572864 </option>
-					<option value="2097152"> 2097152 </option>
-					<option value="66560000"> 66560000 </option>
-					<option value="133120000"> 133120000 </option>
-					<option value="134217728"> 134217728 </option>
-				</select>
+				<div id="blocksize">
+				</div>
 			</div>
 			<div class="two columns">
-				<select>
-					<option value="200000000"> 200000000 </option>
-					<option value="300000000"> 300000000 </option>
-					<option value="400000000"> 400000000 </option>
-					<option value="500000000"> 500000000 </option>
-				</select>
+				<div id="dimension">
+				</div>
 			</div>
 			<div class="two columns">
-				<select>
-					<option value="0.05"> 0.05 </option>
-					<option value="0.5"> 0.5 </option>
-				</select>
+				<div id="start_reduce_percentage">
+				</div>
 			</div>
+			<div class="two columns">
+				<div id="workload">
+				</div>
+			</div>
+
+
 			<div class="one columns">
 				<input type="button" value="Graph" onclick="graph(this)"></input>
 			</div>			
@@ -66,8 +57,234 @@
 var xLength = 600
 var yLength = 300
 
+var selector = {blocksize: "", replication: "", dimension: "", start_reduce_percentage: "", workload: ""}
+
+var nodes = {replication : [], blocksize: [], dimension: [], start_reduce_percentage: [], workload: []}
+
 function dataUrl(redudancies, blocksize, dimension, start){
 	return "https://raw.githubusercontent.com/siscia/MarcHadoopLog/gh-pages/host1/marc_log/terasort/data/" + redudancies + "_" + blocksize + "_" + dimension + "_" + start + ".csv";
+}
+
+function aggregateTeraSort() {
+	return "https://github.com/siscia/MarcHadoopLog/raw/gh-pages/host1/marc_log/teratest/terasort/data/aggregate/aggregate.csv"
+}
+
+function aggregateWordCount() {
+	return "https://raw.githubusercontent.com/siscia/MarcHadoopLog/gh-pages/host1/marc_log/wordtest/wordcount/data/aggregate/aggregate.csv"
+}
+
+function getAggregateData(f) {
+	part = {};
+	part.run = f;
+	part.combinations = new Set();
+	part.replication = new Set();
+	part.blocksize = new Set();
+	part.dimension = new Set();
+	part.start_reduce_percentage = new Set();
+	part.workload = new Set();
+	part.count = 0;
+	part.trigger = function() {
+		this.count += 1;
+		if (this.count == 2){
+			this.combinations = Array.from(this.combinations).sort(function(a,b){return a-b;});
+			this.replication = Array.from(this.replication).sort(function(a,b){return a-b;});
+			this.blocksize = Array.from(this.blocksize).sort(function(a,b){return a-b;});
+			this.dimension = Array.from(this.dimension).sort(function(a,b){return a-b;});
+			this.start_reduce_percentage = Array.from(this.start_reduce_percentage).sort(function(a,b){return a-b;});
+			this.workload = Array.from(this.workload).sort()
+			part.run(this);
+		}
+	}
+	d3.csv(aggregateWordCount())
+		.row(function(d){
+			data = {}
+			data.replication = +d.replication;
+			data.blocksize = +d.blocksize;
+			data.dimension = +d.dimension;
+			data.start_reduce_percentage = +d.start_reduce_percentage;
+			data.workload = "wordcount";
+			return data
+		})
+		.get(function (error, rows){
+			for (d in rows) {
+				part.combinations.add(rows[d]);
+				part.replication.add(rows[d].replication);
+				part.blocksize.add(rows[d].blocksize);
+				part.dimension.add(rows[d].dimension);
+				part.start_reduce_percentage.add(rows[d].start_reduce_percentage);
+			}
+			part.workload.add("wordcount");
+			part.trigger();
+		});
+	d3.csv(aggregateTeraSort())
+		.row(function(d){
+			data = {}
+			data.replication = +d.replication;
+			data.blocksize = +d.blocksize;
+			data.dimension = +d.dimension;
+			data.start_reduce_percentage = +d.start_reduce_percentage;
+			data.workload = "terasort";
+			return data
+		})
+		.get(function (error, rows){
+			for (d in rows) {
+				part.combinations.add(rows[d]);
+				part.replication.add(rows[d].replication);
+				part.blocksize.add(rows[d].blocksize);
+				part.dimension.add(rows[d].dimension);
+				part.start_reduce_percentage.add(rows[d].start_reduce_percentage);
+			}
+			part.workload.add("terasort");
+			part.trigger();
+		});
+	return part
+}
+
+function selected(data) {
+	return function() {
+		console.log(this);
+		console.log(this.value);
+		console.log(this.name);
+		selector[this.name] = this.value;
+		filter(data);
+	}
+}
+
+function singleFilter(d) {
+	if ((d.replication != selector.replication) && (selector.replication != "")){
+		return false;
+	}
+	if ((d.blocksize != selector.blocksize) && (selector.blocksize != "")){
+		return false;
+	}
+	if ((d.dimension != selector.dimension) && (selector.dimension != "")){
+		return false;
+	}
+	if ((d.start_reduce_percentage != selector.start_reduce_percentage) && (selector.start_reduce_percentage != "")){
+		return false;
+	}
+	if ((d.workload != selector.workload) && (selector.workload != "")){
+		return false;
+	}
+	return true;
+}
+
+function filter(data) {
+	g = data.combinations.filter(singleFilter)
+
+	for (q in nodes.replication){
+		nodes.replication[q].style("background-color", "red");
+	}
+	for (h of g){
+		nodes.replication[h.replication].style("background-color", "green");
+	}
+
+	for (q in nodes.blocksize){
+		nodes.blocksize[q].style("background-color", "red");
+	}
+	for (h of g){
+		nodes.blocksize[h.blocksize].style("background-color", "green");
+	}
+	
+	for (q in nodes.dimension){
+		nodes.dimension[q].style("background-color", "red");
+	}
+	for (h of g){
+		nodes.dimension[h.dimension].style("background-color", "green");
+	}
+	
+	for (q in nodes.start_reduce_percentage){
+		nodes.start_reduce_percentage[q].style("background-color", "red");
+	}
+	for (h of g){
+		nodes.start_reduce_percentage[h.start_reduce_percentage].style("background-color", "green");
+	}
+
+	for (q in nodes.workload){
+		nodes.workload[q].style("background-color", "red");
+	}
+	for (h of g){
+		nodes.workload[h.workload].style("background-color", "green");
+	}
+}
+
+function createTable(data) {
+
+	onclick = selected(data)
+
+	for (d of data.replication) {
+		node = d3.select("#replication")
+			.insert("div")
+			.attr("class", "unkown")
+			.html(d);
+			
+		node.insert("input")
+			.attr({"type": "radio", 
+			       "value":d, 
+			       "name": "replication"})
+			.on("click", onclick);
+
+		nodes.replication[d] = node;
+	}
+
+	for (d of data.blocksize) {
+		node = d3.select("#blocksize")
+			.insert("div")
+			.attr("class", "unkown")
+			.html(d);
+
+		node.insert("input")
+			.attr({"type": "radio", 
+			       "value": d, 
+			       "name": "blocksize"})
+			.on("click", onclick);
+
+		nodes.blocksize[d] = node;
+	}
+	for (d of data.dimension) {
+		node = d3.select("#dimension")
+			.insert("div")
+			.attr("class", "unkown")
+			.html(d);
+		
+		node.insert("input")
+			.attr({"type": "radio", 
+			       "value": d, 
+			       "name": "dimension"})
+			.on("click", onclick);
+
+		nodes.dimension[d] = node;
+	}
+
+	for (d of data.start_reduce_percentage) {
+		node = d3.select("#start_reduce_percentage")
+			.insert("div")
+			.attr("class", "unkown")
+			.html(d)
+		
+		node.insert("input")
+			.attr({"type": "radio", 
+			       "value": d, 
+			       "name": "start_reduce_percentage"})
+			.on("click", onclick);
+		
+		nodes.start_reduce_percentage[d] = node;
+	}
+
+	for (d of data.workload) {
+		node = d3.select("#workload")
+			.insert("div")
+			.attr("class", "unkown")
+			.html(d)
+		
+		node.insert("input")
+			.attr({"type": "radio", 
+			       "value": d, 
+			       "name": "workload"})
+			.on("click", onclick);
+
+		nodes.workload[d] = node;
+	}
 }
 
 var svgContainer = d3.select("#graph")
