@@ -142,10 +142,18 @@ function getAggregateData(f) {
 
 function selected(data) {
 	return function() {
+		if (this.alreadyChecked) {
+			this.alreadyChecked = false;
+			this.checked = false;
+			selector[this.name] = "";
+			filter(data);
+			return
+		}
 		console.log(this);
 		console.log(this.value);
 		console.log(this.name);
 		selector[this.name] = this.value;
+		this.alreadyChecked = true
 		filter(data);
 	}
 }
