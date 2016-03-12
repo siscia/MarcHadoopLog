@@ -303,15 +303,25 @@ var svgContainer = d3.select("#graph")
 var legend_scale = d3.scale.ordinal()
 			.domain(["map", "reduce", "total"])
 			.range(["red", "green", "blue"]);
-			
+
+function dataUrl() {
+	url = "https://raw.githubusercontent.com/siscia/MarcHadoopLog/gh-pages/host1/marc_log/";
+	if (selector.workload == "wordcount"){
+		url += "wordtest/wordcount/"
+	} else if (selector.workload == "terasort") {
+		url += "teratest/terasort/"
+	}
+	url += "data/";
+	url += selector.replication + "_";
+	url += selector.blocksize + "_";
+	url += selector.dimension + "_";
+	url += selector.start_reduce_percentage + ".csv";
+	return url;
+}
+
 function graph(button){
-	form = document.getElementById("data_form")
-	red = form[0].value;
-	blocksize = form[1].value;
-	dimension = form[2].value;
-	start = form[3].value;
-	console.log(dataUrl(red, blocksize, dimension, start));
-	d3.csv(dataUrl(red, blocksize, dimension, start))
+	console.log(dataUrl());
+	d3.csv(dataUrl())
 		.row(function(d) { 
 			d.map = +d.map; 
 			d.reduce = +d.reduce;
@@ -420,6 +430,8 @@ function ready(error, data){
 				return yLength/2.8;});
 	
 }
+
+window.onload = getAggregateData(createTable);
 
 </script>
 </body>
