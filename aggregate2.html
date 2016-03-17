@@ -35,6 +35,7 @@ d3.csv(dataUrl())
 		d.dimension = +d.dimension;
 		d.start_reduce_percentage = +d.start_reduce_percentage;
 		d.total_time = +d.total_time;
+		d.map_tasks = Math.ceil(Math.ceil(d.dimension / d.blocksize) / 5); 
 		return d;})
 	.get(ready);
 
@@ -57,8 +58,8 @@ function central_position(array, total) {
 };
 
 var domain_scale = d3.scale.ordinal()
-			.domain(["Replication", "Blocksize", "Dimension", "StartReducePercentage"])
-			.range(central_position(["Replication", "Blocksize", "Dimension", "StartReducePercentage"], xLength))
+			.domain(["Replication", "Blocksize", "Dimension", "MapTasks", "StartReducePercentage"])
+			.range(central_position(["Replication", "Blocksize", "Dimension", "Tasks", "StartReducePercentage"], xLength))
 
 svgContainer.append("text")
 	.text("Replication")
@@ -74,6 +75,13 @@ svgContainer.append("text")
 	.text("Dimension")
 	.attr("x", function() {return domain_scale("Dimension");})
 	.attr("y", function() {return 28;})
+
+
+svgContainer.append("text")
+	.text("Tasks")
+	.attr("x", function() {return domain_scale("MapTasks");})
+	.attr("y", function() {return 28;})
+
 
 svgContainer.append("text")
 	.text("StartReduce")
@@ -95,13 +103,18 @@ function ready(error, data){
 	var blocksize = new Set();
 	var dimension = new Set();
 	var startReduce = new Set();
+	var mapTasks = new Set();
 
 	var maxTime = 0;
 	var minTime = +Infinity;
 
-	var sets = [replication, blocksize, dimension, startReduce];
+	var sets = [replication, blocksize, dimension, startReduce, mapTasks];
 	var uniques = {};
-	var foci = {replication: {}, blocksize: {}, dimension: {}, start_reduce_percentage: {}};
+	var foci = {replication: {}, 
+		    blocksize: {}, 
+		    dimension: {}, 
+		    map_tasks: {},
+		    start_reduce_percentage: {}};
 
 	for (d in data) {
 		if (data[d].total_time > maxTime) {
@@ -113,6 +126,7 @@ function ready(error, data){
 		replication.add(data[d].replication);
 		blocksize.add(data[d].blocksize);
 		dimension.add(data[d].dimension);
+		mapTasks.add(data[d].map_tasks);
 		startReduce.add(data[d].start_reduce_percentage);
 	}
 
@@ -133,22 +147,6 @@ function ready(error, data){
 			.attr("fill-opacity", "0.01")
 			.attr("stroke", "black");
 
-	/*	container.append("g")
-			.append("circle")
-			.attr("cx", coordinates[0])
-			.attr("cy", coordinates[1])
-			.attr("r", radius_scale(mean - std))
-			.attr("fill-opacity", "0.01")
-			.attr("stroke", "black");
-
-		container.append("g")
-			.append("circle")
-			.attr("cx", coordinates[0])
-			.attr("cy", coordinates[1])
-			.attr("r", radius_scale(mean + std))
-			.attr("fill-opacity", "0.01")
-			.attr("stroke", "black");
-	*/
 		container.append("g")
 			.append("line")
 			.attr("x1", coordinates[0] - radius_scale(mean + std))
@@ -162,8 +160,11 @@ function ready(error, data){
 	uniques.blocksize = Array.from(blocksize).sort(function(a,b){return a-b;});
 	uniques.dimension = Array.from(dimension).sort(function(a,b){return a-b;});
 	uniques.startReduce = Array.from(startReduce).sort(function(a,b){return a-b;});
+	uniques.mapTasks = Array.from(mapTasks)
+				//.map(function(n){return Math.ceil(n);})
+				.sort(function(a,b){return a-b;});
 
-	console.log(uniques.blocksize)
+	console.log(uniques.mapTasks)
 
 	var replication_position = central_position(uniques.replication, yLength);
 	for (p in replication_position) {
@@ -181,6 +182,12 @@ function ready(error, data){
 	for (p in dimension_position) {
 		foci.dimension[uniques.dimension[p]] = {cy: dimension_position[p], cx: domain_scale("Dimension")};		
 		
+	};
+
+	var map_tasks_position = central_position(uniques.mapTasks, yLength);
+	for (p in map_tasks_position) {
+		foci.map_tasks[uniques.mapTasks[p]] = {cy: map_tasks_position[p], cx: domain_scale("MapTasks")};
+	
 	};
 
 	var start_reduce_position = central_position(uniques.startReduce, yLength);
@@ -219,6 +226,16 @@ function ready(error, data){
 		circle(svgContainer, f, mean, std)
 	}
 
+	for (p in map_tasks_position) {
+		f = foci.map_tasks[uniques.mapTasks[p]];
+		to_plot = data
+				.filter(function(d){return d.map_tasks == uniques.mapTasks[p];})
+				.map(function(d){ return d.total_time;});
+		[mean, variance, std] = statistics(to_plot)
+		f = [f.cx, f.cy];
+		circle(svgContainer, f, mean, std)
+	}
+
 	for (p in start_reduce_position) {
 		f = foci.start_reduce_percentage[uniques.startReduce[p]];
 		to_plot = data
@@ -228,9 +245,6 @@ function ready(error, data){
 		f = [f.cx, f.cy];
 		circle(svgContainer, f, mean, std)
 	}
-
-
-	
 
 	for (p in replication_position) {
 		svgContainer.append("text")
@@ -252,6 +266,17 @@ function ready(error, data){
 			.text((uniques.dimension[p]/1000000)+"M")
 			.attr("x", function() {return domain_scale("Dimension") + 40;})
 			.attr("y", function() {return dimension_position[p];})
+	}
+
+	console.log(map_tasks_position);
+	console.log(uniques.mapTasks);
+
+	for (p in map_tasks_position) {
+		console.log(p, uniques.mapTasks[p], map_tasks_position[p]);
+		svgContainer.append("text")
+			.text((uniques.mapTasks[p]*5 + ""))
+			.attr("x", function() {return domain_scale("MapTasks") + 50;})
+			.attr("y", function() {return map_tasks_position[p];})	
 	}
 
 	for (p in start_reduce_position) {
