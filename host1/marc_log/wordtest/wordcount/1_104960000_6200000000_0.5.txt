@@ -1,0 +1,157 @@
+16/03/11 18:10:29| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/03/11 18:10:30| Total input paths to process : 5
+16/03/11 18:10:30| number of splits:55
+16/03/11 18:10:30| mapred.reduce.tasks is deprecated. Instead, use mapreduce.job.reduces
+16/03/11 18:10:31| Submitting tokens for job: job_1454085119865_1537
+16/03/11 18:10:31| Submitted application application_1454085119865_1537
+16/03/11 18:10:31| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1454085119865_1537/
+16/03/11 18:10:31| Running job: job_1454085119865_1537
+16/03/11 18:10:38| Job job_1454085119865_1537 running in uber mode : false
+16/03/11 18:10:38|  map 0% reduce 0%
+16/03/11 18:10:53|  map 3% reduce 0%
+16/03/11 18:10:54|  map 7% reduce 0%
+16/03/11 18:10:55|  map 9% reduce 0%
+16/03/11 18:10:58|  map 10% reduce 0%
+16/03/11 18:11:02|  map 11% reduce 0%
+16/03/11 18:11:03|  map 12% reduce 0%
+16/03/11 18:11:04|  map 13% reduce 0%
+16/03/11 18:11:07|  map 14% reduce 0%
+16/03/11 18:11:08|  map 17% reduce 0%
+16/03/11 18:11:11|  map 18% reduce 0%
+16/03/11 18:11:12|  map 19% reduce 0%
+16/03/11 18:11:14|  map 20% reduce 0%
+16/03/11 18:11:17|  map 25% reduce 0%
+16/03/11 18:11:21|  map 26% reduce 0%
+16/03/11 18:11:24|  map 29% reduce 0%
+16/03/11 18:11:25|  map 31% reduce 0%
+16/03/11 18:11:26|  map 32% reduce 0%
+16/03/11 18:11:28|  map 35% reduce 0%
+16/03/11 18:11:29|  map 42% reduce 0%
+16/03/11 18:11:37|  map 43% reduce 0%
+16/03/11 18:11:39|  map 45% reduce 0%
+16/03/11 18:11:40|  map 47% reduce 0%
+16/03/11 18:11:41|  map 48% reduce 0%
+16/03/11 18:11:45|  map 50% reduce 0%
+16/03/11 18:11:47|  map 51% reduce 0%
+16/03/11 18:11:49|  map 53% reduce 0%
+16/03/11 18:11:50|  map 54% reduce 0%
+16/03/11 18:11:52|  map 55% reduce 0%
+16/03/11 18:11:53|  map 56% reduce 0%
+16/03/11 18:11:54|  map 57% reduce 0%
+16/03/11 18:11:55|  map 58% reduce 0%
+16/03/11 18:11:56|  map 59% reduce 0%
+16/03/11 18:11:57|  map 60% reduce 0%
+16/03/11 18:11:58|  map 61% reduce 0%
+16/03/11 18:12:00|  map 62% reduce 0%
+16/03/11 18:12:01|  map 63% reduce 0%
+16/03/11 18:12:03|  map 64% reduce 0%
+16/03/11 18:12:04|  map 65% reduce 0%
+16/03/11 18:12:06|  map 67% reduce 0%
+16/03/11 18:12:07|  map 70% reduce 0%
+16/03/11 18:12:09|  map 71% reduce 0%
+16/03/11 18:12:10|  map 74% reduce 0%
+16/03/11 18:12:11|  map 75% reduce 0%
+16/03/11 18:12:12|  map 77% reduce 0%
+16/03/11 18:12:13|  map 78% reduce 0%
+16/03/11 18:12:15|  map 79% reduce 0%
+16/03/11 18:12:17|  map 80% reduce 0%
+16/03/11 18:12:19|  map 81% reduce 0%
+16/03/11 18:12:20|  map 82% reduce 2%
+16/03/11 18:12:23|  map 83% reduce 6%
+16/03/11 18:12:24|  map 84% reduce 8%
+16/03/11 18:12:25|  map 85% reduce 12%
+16/03/11 18:12:26|  map 86% reduce 19%
+16/03/11 18:12:27|  map 88% reduce 19%
+16/03/11 18:12:28|  map 88% reduce 22%
+16/03/11 18:12:29|  map 88% reduce 25%
+16/03/11 18:12:31|  map 88% reduce 26%
+16/03/11 18:12:32|  map 88% reduce 28%
+16/03/11 18:12:33|  map 89% reduce 28%
+16/03/11 18:12:39|  map 90% reduce 28%
+16/03/11 18:12:44|  map 91% reduce 29%
+16/03/11 18:12:54|  map 92% reduce 29%
+16/03/11 18:13:00|  map 92% reduce 30%
+16/03/11 18:13:03|  map 93% reduce 30%
+16/03/11 18:13:09|  map 94% reduce 30%
+16/03/11 18:13:20|  map 95% reduce 30%
+16/03/11 18:13:22|  map 95% reduce 31%
+16/03/11 18:13:33|  map 96% reduce 31%
+16/03/11 18:13:39|  map 96% reduce 32%
+16/03/11 18:13:45|  map 97% reduce 32%
+16/03/11 18:13:49|  map 98% reduce 32%
+16/03/11 18:14:04|  map 99% reduce 32%
+16/03/11 18:14:05|  map 99% reduce 33%
+16/03/11 18:14:18|  map 100% reduce 33%
+16/03/11 18:14:19|  map 100% reduce 35%
+16/03/11 18:14:20|  map 100% reduce 47%
+16/03/11 18:14:21|  map 100% reduce 55%
+16/03/11 18:14:22|  map 100% reduce 64%
+16/03/11 18:14:23|  map 100% reduce 78%
+16/03/11 18:14:24|  map 100% reduce 83%
+16/03/11 18:14:25|  map 100% reduce 88%
+16/03/11 18:14:26|  map 100% reduce 93%
+16/03/11 18:14:27|  map 100% reduce 95%
+16/03/11 18:14:29|  map 100% reduce 96%
+16/03/11 18:14:30|  map 100% reduce 97%
+16/03/11 18:14:31|  map 100% reduce 98%
+16/03/11 18:14:32|  map 100% reduce 99%
+16/03/11 18:14:34|  map 100% reduce 100%
+16/03/11 18:14:40| Job job_1454085119865_1537 completed successfully
+16/03/11 18:14:40| Counters: 51
+	File System Counters
+		FILE: Number of bytes read=741426291
+		FILE: Number of bytes written=1098068332
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=5512690922
+		HDFS: Number of bytes written=175570520
+		HDFS: Number of read operations=201
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=24
+	Job Counters 
+		Killed map tasks=8
+		Launched map tasks=63
+		Launched reduce tasks=12
+		Data-local map tasks=44
+		Rack-local map tasks=19
+		Total time spent by all maps in occupied slots (ms)=3706940
+		Total time spent by all reduces in occupied slots (ms)=1688422
+		Total time spent by all map tasks (ms)=3706940
+		Total time spent by all reduce tasks (ms)=1688422
+		Total vcore-seconds taken by all map tasks=3706940
+		Total vcore-seconds taken by all reduce tasks=1688422
+		Total megabyte-seconds taken by all map tasks=3795906560
+		Total megabyte-seconds taken by all reduce tasks=1728944128
+	Map-Reduce Framework
+		Map input records=590525
+		Map output records=504669495
+		Map output bytes=7603641280
+		Map output materialized bytes=354274478
+		Input split bytes=8140
+		Combine input records=516796850
+		Combine output records=23687107
+		Reduce input groups=5491966
+		Reduce shuffle bytes=354274478
+		Reduce input records=11559752
+		Reduce output records=5491966
+		Spilled Records=35854634
+		Shuffled Maps =660
+		Failed Shuffles=0
+		Merged Map outputs=660
+		GC time elapsed (ms)=47170
+		CPU time spent (ms)=2216270
+		Physical memory (bytes) snapshot=29689683968
+		Virtual memory (bytes) snapshot=99900690432
+		Total committed heap usage (bytes)=35281436672
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=5512682782
+	File Output Format Counters 
+		Bytes Written=175570520

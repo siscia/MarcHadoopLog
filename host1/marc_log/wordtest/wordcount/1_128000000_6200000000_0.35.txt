@@ -1,0 +1,154 @@
+16/03/11 19:47:50| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/03/11 19:47:51| Total input paths to process : 5
+16/03/11 19:47:51| number of splits:45
+16/03/11 19:47:51| mapred.reduce.tasks is deprecated. Instead, use mapreduce.job.reduces
+16/03/11 19:47:52| Submitting tokens for job: job_1454085119865_1557
+16/03/11 19:47:52| Submitted application application_1454085119865_1557
+16/03/11 19:47:52| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1454085119865_1557/
+16/03/11 19:47:52| Running job: job_1454085119865_1557
+16/03/11 19:47:59| Job job_1454085119865_1557 running in uber mode : false
+16/03/11 19:47:59|  map 0% reduce 0%
+16/03/11 19:48:14|  map 3% reduce 0%
+16/03/11 19:48:15|  map 7% reduce 0%
+16/03/11 19:48:17|  map 9% reduce 0%
+16/03/11 19:48:19|  map 10% reduce 0%
+16/03/11 19:48:24|  map 11% reduce 0%
+16/03/11 19:48:25|  map 12% reduce 0%
+16/03/11 19:48:26|  map 13% reduce 0%
+16/03/11 19:48:27|  map 14% reduce 0%
+16/03/11 19:48:28|  map 15% reduce 0%
+16/03/11 19:48:29|  map 17% reduce 0%
+16/03/11 19:48:32|  map 18% reduce 0%
+16/03/11 19:48:33|  map 19% reduce 0%
+16/03/11 19:48:35|  map 20% reduce 0%
+16/03/11 19:48:36|  map 21% reduce 0%
+16/03/11 19:48:37|  map 22% reduce 0%
+16/03/11 19:48:38|  map 25% reduce 0%
+16/03/11 19:48:42|  map 27% reduce 0%
+16/03/11 19:48:44|  map 28% reduce 0%
+16/03/11 19:48:46|  map 29% reduce 0%
+16/03/11 19:48:47|  map 33% reduce 0%
+16/03/11 19:48:51|  map 34% reduce 0%
+16/03/11 19:48:53|  map 38% reduce 0%
+16/03/11 19:48:54|  map 39% reduce 0%
+16/03/11 19:48:56|  map 44% reduce 0%
+16/03/11 19:48:57|  map 48% reduce 0%
+16/03/11 19:48:58|  map 51% reduce 0%
+16/03/11 19:49:03|  map 52% reduce 0%
+16/03/11 19:49:05|  map 53% reduce 0%
+16/03/11 19:49:08|  map 54% reduce 0%
+16/03/11 19:49:10|  map 56% reduce 0%
+16/03/11 19:49:11|  map 56% reduce 3%
+16/03/11 19:49:13|  map 58% reduce 6%
+16/03/11 19:49:14|  map 60% reduce 7%
+16/03/11 19:49:15|  map 60% reduce 10%
+16/03/11 19:49:16|  map 60% reduce 13%
+16/03/11 19:49:17|  map 61% reduce 14%
+16/03/11 19:49:19|  map 62% reduce 14%
+16/03/11 19:49:20|  map 63% reduce 14%
+16/03/11 19:49:22|  map 64% reduce 14%
+16/03/11 19:49:23|  map 65% reduce 14%
+16/03/11 19:49:24|  map 66% reduce 14%
+16/03/11 19:49:25|  map 66% reduce 15%
+16/03/11 19:49:26|  map 67% reduce 15%
+16/03/11 19:49:27|  map 69% reduce 15%
+16/03/11 19:49:31|  map 71% reduce 15%
+16/03/11 19:49:35|  map 73% reduce 17%
+16/03/11 19:49:37|  map 74% reduce 19%
+16/03/11 19:49:39|  map 76% reduce 19%
+16/03/11 19:49:41|  map 78% reduce 21%
+16/03/11 19:49:42|  map 78% reduce 22%
+16/03/11 19:49:45|  map 79% reduce 22%
+16/03/11 19:49:50|  map 82% reduce 22%
+16/03/11 19:49:51|  map 83% reduce 23%
+16/03/11 19:49:53|  map 84% reduce 25%
+16/03/11 19:49:54|  map 84% reduce 26%
+16/03/11 19:49:55|  map 85% reduce 26%
+16/03/11 19:49:56|  map 85% reduce 27%
+16/03/11 19:50:05|  map 86% reduce 27%
+16/03/11 19:50:10|  map 87% reduce 27%
+16/03/11 19:50:21|  map 88% reduce 27%
+16/03/11 19:50:22|  map 88% reduce 28%
+16/03/11 19:50:28|  map 89% reduce 28%
+16/03/11 19:50:36|  map 90% reduce 28%
+16/03/11 19:50:38|  map 90% reduce 29%
+16/03/11 19:50:43|  map 91% reduce 29%
+16/03/11 19:50:50|  map 92% reduce 29%
+16/03/11 19:50:53|  map 92% reduce 30%
+16/03/11 19:51:04|  map 93% reduce 30%
+16/03/11 19:51:07|  map 94% reduce 30%
+16/03/11 19:51:19|  map 95% reduce 30%
+16/03/11 19:51:21|  map 95% reduce 31%
+16/03/11 19:51:22|  map 96% reduce 31%
+16/03/11 19:51:34|  map 97% reduce 31%
+16/03/11 19:51:38|  map 97% reduce 32%
+16/03/11 19:51:43|  map 98% reduce 32%
+16/03/11 19:51:50|  map 99% reduce 32%
+16/03/11 19:51:54|  map 99% reduce 33%
+16/03/11 19:52:05|  map 100% reduce 33%
+16/03/11 19:52:06|  map 100% reduce 37%
+16/03/11 19:52:07|  map 100% reduce 50%
+16/03/11 19:52:08|  map 100% reduce 56%
+16/03/11 19:52:09|  map 100% reduce 68%
+16/03/11 19:52:10|  map 100% reduce 81%
+16/03/11 19:52:11|  map 100% reduce 85%
+16/03/11 19:52:12|  map 100% reduce 100%
+16/03/11 19:52:13| Job job_1454085119865_1557 completed successfully
+16/03/11 19:52:13| Counters: 51
+	File System Counters
+		FILE: Number of bytes read=756065453
+		FILE: Number of bytes written=1116175378
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=5512560291
+		HDFS: Number of bytes written=183700836
+		HDFS: Number of read operations=171
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=24
+	Job Counters 
+		Killed map tasks=8
+		Launched map tasks=53
+		Launched reduce tasks=12
+		Data-local map tasks=42
+		Rack-local map tasks=11
+		Total time spent by all maps in occupied slots (ms)=3727963
+		Total time spent by all reduces in occupied slots (ms)=2215238
+		Total time spent by all map tasks (ms)=3727963
+		Total time spent by all reduce tasks (ms)=2215238
+		Total vcore-seconds taken by all map tasks=3727963
+		Total vcore-seconds taken by all reduce tasks=2215238
+		Total megabyte-seconds taken by all map tasks=3817434112
+		Total megabyte-seconds taken by all reduce tasks=2268403712
+	Map-Reduce Framework
+		Map input records=590199
+		Map output records=504656877
+		Map output bytes=7612759555
+		Map output materialized bytes=358840912
+		Input split bytes=6705
+		Combine input records=517403575
+		Combine output records=24107346
+		Reduce input groups=5492607
+		Reduce shuffle bytes=358840912
+		Reduce input records=11360648
+		Reduce output records=5492607
+		Spilled Records=35467994
+		Shuffled Maps =540
+		Failed Shuffles=0
+		Merged Map outputs=540
+		GC time elapsed (ms)=40564
+		CPU time spent (ms)=2165690
+		Physical memory (bytes) snapshot=24735899648
+		Virtual memory (bytes) snapshot=85296791552
+		Total committed heap usage (bytes)=28935979008
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=5512553586
+	File Output Format Counters 
+		Bytes Written=183700836
