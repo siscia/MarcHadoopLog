@@ -144,12 +144,6 @@ function ready(error, data){
 			.domain([minTime, maxTime])
 			.range([1, 100]);
 
-	console.log(radius_scale(1285));
-	console.log(radius_scale(5577));
-	console.log(radius_scale(1026));
-	console.log(radius_scale(1071));
-
-
 	var color_scale = d3.scale.linear()
 			.domain([minTime, maxTime])
 			.range(["green", "red"])
@@ -263,9 +257,7 @@ function ready(error, data){
 		to_plot = data
 				.filter(function(d){return d.reducers == uniques.reducers[p];})
 				.map(function(d){ return d.total_time;});
-		console.log(to_plot);
 		[mean, variance, std] = statistics(to_plot)
-       		console.log(mean, variance, std);
 		f = [f.cx, f.cy];
 		circle(svgContainer, f, mean, std)
 	}
