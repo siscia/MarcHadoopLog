@@ -89,6 +89,12 @@ svgContainer.append("text")
 	.attr("x", function() {return domain_scale("StartReducePercentage");})
 	.attr("y", function() {return 28;})
 
+svgContainer.append("text")
+	.text("Reducers")
+	.attr("x", function() {return domain_scale("Reducers");})
+	.attr("y", function() {return 28;})
+
+
 function statistics(d){
 	var averange = d.reduce(function(sum, value){return sum + value;}) / d.length;
 	var std = d.reduce(function(soFar, next){
@@ -138,11 +144,18 @@ function ready(error, data){
 			.domain([minTime, maxTime])
 			.range([1, 100]);
 
+	console.log(radius_scale(1285));
+	console.log(radius_scale(5577));
+	console.log(radius_scale(1026));
+	console.log(radius_scale(1071));
+
+
 	var color_scale = d3.scale.linear()
 			.domain([minTime, maxTime])
 			.range(["green", "red"])
 
 	function circle(container, coordinates, mean, std) {
+
 		container.append("g")
 			.append("circle")
 			.attr("cx", coordinates[0])
@@ -168,8 +181,6 @@ function ready(error, data){
 	uniques.mapTasks = Array.from(mapTasks)
 				//.map(function(n){return Math.ceil(n);})
 				.sort(function(a,b){return a-b;});
-
-	console.log(uniques.mapTasks)
 
 	var replication_position = central_position(uniques.replication, yLength);
 	for (p in replication_position) {
@@ -197,7 +208,7 @@ function ready(error, data){
 
 	var reducers_position = central_position(uniques.reducers, yLength);
 	for (p in reducers_position) {
-		foci.map_tasks[uniques.reducers[p]] = {cy: reducers_position[p], cx: domain_scale("Reducers")};
+		foci.reducers[uniques.reducers[p]] = {cy: reducers_position[p], cx: domain_scale("Reducers")};
 	
 	};
 	
@@ -248,11 +259,13 @@ function ready(error, data){
 	}
 
 	for (p in reducers_position) {
-		f = foci.reducer_percentage[uniques.reducers[p]];
+		f = foci.reducers[uniques.reducers[p]];
 		to_plot = data
 				.filter(function(d){return d.reducers == uniques.reducers[p];})
 				.map(function(d){ return d.total_time;});
+		console.log(to_plot);
 		[mean, variance, std] = statistics(to_plot)
+       		console.log(mean, variance, std);
 		f = [f.cx, f.cy];
 		circle(svgContainer, f, mean, std)
 	}
@@ -289,11 +302,7 @@ function ready(error, data){
 			.attr("y", function() {return dimension_position[p];})
 	}
 
-	console.log(map_tasks_position);
-	console.log(uniques.mapTasks);
-
 	for (p in map_tasks_position) {
-		console.log(p, uniques.mapTasks[p], map_tasks_position[p]);
 		svgContainer.append("text")
 			.text((uniques.mapTasks[p]*5 + ""))
 			.attr("x", function() {return domain_scale("MapTasks") + 50;})
@@ -303,7 +312,14 @@ function ready(error, data){
 	for (p in start_reduce_position) {
 		svgContainer.append("text")
 			.text((uniques.startReduce[p]*100) + "%")
-			.attr("x", function() {return domain_scale("StartReducePercentage") + 100;})
+			.attr("x", function() {return domain_scale("StartReducePercentage") + 75;})
+			.attr("y", function() {return start_reduce_position[p];})	
+	}
+
+	for (p in reducers_position) {
+		svgContainer.append("text")
+			.text((uniques.reducers[p]))
+			.attr("x", function() {return domain_scale("Reducers") + 75;})
 			.attr("y", function() {return start_reduce_position[p];})	
 	}
 
