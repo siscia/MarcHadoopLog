@@ -14,7 +14,8 @@
 			<div class="two columns"> BlockSize </div>
 			<div class="two columns"> Dimension </div>
 			<div class="two columns"> Start Reduce </div>
-			<div class="tow columns"> Reducers </div>
+			<div class="one columns"> Reducers </div>
+			<div class="two columns"> TaskIO </div>
 			<div class="two columns"> Workload </div>
 		</div>
 
@@ -37,10 +38,14 @@
 				<div id="start_reduce_percentage">
 				</div>
 			</div>
-			<div class="two columns">
+			<div class="one columns">
 				<div id="reducers">
 				</div>
 			</div>	
+			<div class="two columns">
+				<div id="taskio">
+				</div>
+			</div>
 			<div class="two columns">
 				<div id="workload">
 				</div>
@@ -62,12 +67,30 @@
 var xLength = 600
 var yLength = 300
 
-var selector = {blocksize: "", replication: "", dimension: "", reducers: "",start_reduce_percentage: "", workload: ""}
+var selector = {blocksize: "", 
+		replication: "", 
+		dimension: "", 
+		reducers: "",
+		start_reduce_percentage: "", 
+		taskio: "",
+		workload: ""}
 
-var nodes = {replication : [], blocksize: [], dimension: [], reducers: [], start_reduce_percentage: [], workload: []}
+var nodes = {replication : [], 
+		blocksize: [], 
+		dimension: [], 
+		reducers: [], 
+		start_reduce_percentage: [], 
+		taskio: [],
+		workload: []}
 
-function dataUrl(redudancies, blocksize, dimension, start, reducers){
-	return "https://raw.githubusercontent.com/siscia/MarcHadoopLog/gh-pages/host1/marc_log/terasort/data/" + redudancies + "_" + blocksize + "_" + dimension + "_" + start + "_" + reducers + ".csv";
+function dataUrl(redudancies, blocksize, dimension, start, reducers, taskio){
+	return "https://raw.githubusercontent.com/siscia/MarcHadoopLog/gh-pages/host1/marc_log/terasort/data/" 
+		+ redudancies + "_" 
+		+ blocksize + "_" 
+		+ dimension + "_" 
+		+ start + "_" 
+		+ reducers + "_" 
+		+ taskio + ".csv";
 }
 
 function aggregateTeraSort() {
@@ -87,17 +110,24 @@ function getAggregateData(f) {
 	part.dimension = new Set();
 	part.start_reduce_percentage = new Set();
 	part.reducers = new Set();
+	part.taskio = new Set();
 	part.workload = new Set();
 	part.count = 0;
 	part.trigger = function() {
 		this.count += 1;
 		if (this.count == 2){
+			
+			
+			console.log(this.reducers);
+
+
 			this.combinations = Array.from(this.combinations).sort(function(a,b){return a-b;});
 			this.replication = Array.from(this.replication).sort(function(a,b){return a-b;});
 			this.blocksize = Array.from(this.blocksize).sort(function(a,b){return a-b;});
 			this.dimension = Array.from(this.dimension).sort(function(a,b){return a-b;});
 			this.start_reduce_percentage = Array.from(this.start_reduce_percentage).sort(function(a,b){return a-b;});
 			this.reducers = Array.from(this.reducers).sort(function(a,b){return a-b;});
+			this.taskio = Array.from(this.taskio).sort(function(a,b){return a-b;});
 			this.workload = Array.from(this.workload).sort()
 			part.run(this);
 		}
@@ -110,6 +140,7 @@ function getAggregateData(f) {
 			data.dimension = +d.dimension;
 			data.start_reduce_percentage = +d.start_reduce_percentage;
 			data.reducers = +d.reducers;
+			data.taskio = +d.taskio;
 			data.workload = "wordcount";
 			return data
 		})
@@ -120,7 +151,9 @@ function getAggregateData(f) {
 				part.blocksize.add(rows[d].blocksize);
 				part.dimension.add(rows[d].dimension);
 				part.reducers.add(rows[d].reducers);
+				part.taskio.add(rows[d].taskio);
 				part.start_reduce_percentage.add(rows[d].start_reduce_percentage);
+				console.log(rows[d].reducers);
 			}
 			part.workload.add("wordcount");
 			part.trigger();
@@ -133,6 +166,7 @@ function getAggregateData(f) {
 			data.dimension = +d.dimension;
 			data.start_reduce_percentage = +d.start_reduce_percentage;
 			data.reducers = +d.reducers;
+			data.taskio = +d.taskio;
 			data.workload = "terasort";
 			return data
 		})
@@ -143,6 +177,7 @@ function getAggregateData(f) {
 				part.blocksize.add(rows[d].blocksize);
 				part.dimension.add(rows[d].dimension);
 				part.reducers.add(rows[d].reducers);
+				part.taskio.add(rows[d].taskio);
 				part.start_reduce_percentage.add(rows[d].start_reduce_percentage);
 			}
 			part.workload.add("terasort");
@@ -183,6 +218,9 @@ function singleFilter(d) {
 		return false;
 	}
 	if ((d.reducers != selector.reducers) && (selector.reducers != "")){
+		return false;
+	}
+	if ((d.taskio != selector.taskio) && (selector.taskio != "")){
 		return false;
 	}
 	if ((d.workload != selector.workload) && (selector.workload != "")){
@@ -228,6 +266,13 @@ function filter(data) {
 	for (h of g){
 		nodes.reducers[h.reducers].style("background-color", "green");
 	}
+	
+	for (q in nodes.taskio){
+		nodes.taskio[q].style("background-color", "red");
+	}
+	for (h of g){
+		nodes.taskio[h.taskio].style("background-color", "green");
+	}	
 	
 	for (q in nodes.workload){
 		nodes.workload[q].style("background-color", "red");
@@ -284,7 +329,8 @@ function createTable(data) {
 
 		nodes.dimension[d] = node;
 	}
-	
+
+
 	for (d of data.reducers) {
 		node = d3.select("#reducers")
 			.insert("div")
@@ -314,7 +360,21 @@ function createTable(data) {
 		
 		nodes.start_reduce_percentage[d] = node;
 	}
+	for (d of data.taskio) {
+		node = d3.select("#taskio")
+			.insert("div")
+			.attr("class", "unkown")
+			.html(d)
+		
+		node.insert("input")
+			.attr({"type": "radio", 
+			       "value": d, 
+			       "name": "taskio"})
+			.on("click", onclick);
 
+		nodes.taskio[d] = node;
+	}
+	
 	for (d of data.workload) {
 		node = d3.select("#workload")
 			.insert("div")
@@ -352,7 +412,8 @@ function dataUrl() {
 	url += selector.blocksize + "_";
 	url += selector.dimension + "_";
 	url += selector.start_reduce_percentage + "_";
-	url += selector.reducers + ".csv";
+	url += selector.reducers + "_";
+	url += selector.taskio + ".csv";
 	return url;
 }
 

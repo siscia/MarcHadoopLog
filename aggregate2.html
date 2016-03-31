@@ -35,6 +35,7 @@ d3.csv(dataUrl())
 		d.dimension = +d.dimension;
 		d.start_reduce_percentage = +d.start_reduce_percentage;
 		d.reducers = +d.reducers;
+		d.taskIO = +d.taskio;
 		d.total_time = +d.total_time;
 		d.map_tasks = Math.ceil(Math.ceil(d.dimension / d.blocksize) / 5); 
 		return d;})
@@ -59,8 +60,8 @@ function central_position(array, total) {
 };
 
 var domain_scale = d3.scale.ordinal()
-			.domain(["Replication", "Blocksize", "Dimension", "MapTasks", "StartReducePercentage", "Reducers"])
-			.range(central_position(["Replication", "Blocksize", "Dimension", "Tasks", "StartReducePercentage", "Reducers"], xLength))
+			.domain(["Replication", "Blocksize", "Dimension", "MapTasks", "StartReducePercentage", "Reducers", "TaskIO"])
+			.range(central_position(["Replication", "Blocksize", "Dimension", "Tasks", "StartReducePercentage", "Reducers", "TaskIO"], xLength))
 
 svgContainer.append("text")
 	.text("Replication")
@@ -94,6 +95,12 @@ svgContainer.append("text")
 	.attr("x", function() {return domain_scale("Reducers");})
 	.attr("y", function() {return 28;})
 
+svgContainer.append("text")
+	.text("TaskIO")
+	.attr("x", function() {return domain_scale("TaskIO");})
+	.attr("y", function() {return 28;})
+
+
 
 function statistics(d){
 	var averange = d.reduce(function(sum, value){return sum + value;}) / d.length;
@@ -111,18 +118,20 @@ function ready(error, data){
 	var dimension = new Set();
 	var startReduce = new Set();
 	var reducers = new Set();
+	var taskIO = new Set();
 	var mapTasks = new Set();
 
 	var maxTime = 0;
 	var minTime = +Infinity;
 
-	var sets = [replication, blocksize, dimension, startReduce, reducers, mapTasks];
+	var sets = [replication, blocksize, dimension, startReduce, reducers, taskIO, mapTasks];
 	var uniques = {};
 	var foci = {replication: {}, 
 		    blocksize: {}, 
 		    dimension: {}, 
 		    map_tasks: {},
 		    reducers: {},
+		    taskIO: {},
 		    start_reduce_percentage: {}};
 
 	for (d in data) {
@@ -137,6 +146,7 @@ function ready(error, data){
 		dimension.add(data[d].dimension);
 		reducers.add(data[d].reducers);
 		mapTasks.add(data[d].map_tasks);
+		taskIO.add(data[d].taskIO);
 		startReduce.add(data[d].start_reduce_percentage);
 	}
 
@@ -172,6 +182,7 @@ function ready(error, data){
 	uniques.dimension = Array.from(dimension).sort(function(a,b){return a-b;});
 	uniques.startReduce = Array.from(startReduce).sort(function(a,b){return a-b;});
 	uniques.reducers = Array.from(reducers).sort(function(a,b){return a-b;});
+	uniques.taskIO = Array.from(taskIO).sort(function(a,b){return a-b;});
 	uniques.mapTasks = Array.from(mapTasks)
 				//.map(function(n){return Math.ceil(n);})
 				.sort(function(a,b){return a-b;});
@@ -179,44 +190,45 @@ function ready(error, data){
 	var replication_position = central_position(uniques.replication, yLength);
 	for (p in replication_position) {
 		foci.replication[uniques.replication[p]] = {cy: replication_position[p], cx: domain_scale("Replication")};
-		
 	};
 
 	var blocksize_position = central_position(uniques.blocksize, yLength);
 	for (p in blocksize_position) {
 		foci.blocksize[uniques.blocksize[p]] = {cy: blocksize_position[p], cx: domain_scale("Blocksize")};
-			
 	};
 
 	var dimension_position = central_position(uniques.dimension, yLength);
 	for (p in dimension_position) {
 		foci.dimension[uniques.dimension[p]] = {cy: dimension_position[p], cx: domain_scale("Dimension")};		
-		
 	};
 
 	var map_tasks_position = central_position(uniques.mapTasks, yLength);
 	for (p in map_tasks_position) {
 		foci.map_tasks[uniques.mapTasks[p]] = {cy: map_tasks_position[p], cx: domain_scale("MapTasks")};
+	};
 	
+       	var start_reduce_position = central_position(uniques.startReduce, yLength);
+	for (p in start_reduce_position) {
+		foci.start_reduce_percentage[uniques.startReduce[p]] = {cy: start_reduce_position[p], cx: domain_scale("StartReducePercentage")};
 	};
 
 	var reducers_position = central_position(uniques.reducers, yLength);
 	for (p in reducers_position) {
 		foci.reducers[uniques.reducers[p]] = {cy: reducers_position[p], cx: domain_scale("Reducers")};
-	
-	};
-	
-	var start_reduce_position = central_position(uniques.startReduce, yLength);
-	for (p in start_reduce_position) {
-		foci.start_reduce_percentage[uniques.startReduce[p]] = {cy: start_reduce_position[p], cx: domain_scale("StartReducePercentage")};
-	
 	};
 
-	for (p in blocksize_position) {
+	var taskIO_position = central_position(uniques.taskIO, yLength);
+	for (p in taskIO_position) {
+		foci.taskIO[uniques.taskIO[p]] = {cy: taskIO_position[p], cx: domain_scale("TaskIO")};
+	};
+	
+	
+       for (p in blocksize_position) {
 		f = foci.blocksize[uniques.blocksize[p]];
 		to_plot = data
 				.filter(function(d){return d.blocksize == uniques.blocksize[p];})
 				.map(function(d){ return d.total_time;});
+		console.log(uniques);
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
 		circle(svgContainer, f, mean, std)
@@ -272,7 +284,20 @@ function ready(error, data){
 		circle(svgContainer, f, mean, std)
 	}
 
-	for (p in replication_position) {
+       for (p in start_reduce_position) {
+		f = foci.taskIO[uniques.taskIO[p]];
+		to_plot = data
+				.filter(function(d){return d.taskIO == uniques.taskIO[p];})
+				.map(function(d){ return d.total_time;});
+		[mean, variance, std] = statistics(to_plot)
+		f = [f.cx, f.cy];
+		circle(svgContainer, f, mean, std)
+	}
+
+
+       
+       
+       for (p in replication_position) {
 		svgContainer.append("text")
 			.text(uniques.replication[p])
 			.attr("x", function() {return domain_scale("Replication") + 15;})
@@ -312,7 +337,14 @@ function ready(error, data){
 		svgContainer.append("text")
 			.text((uniques.reducers[p]))
 			.attr("x", function() {return domain_scale("Reducers") + 75;})
-			.attr("y", function() {return start_reduce_position[p];})	
+			.attr("y", function() {return reducers_position[p];})	
+	}
+
+	for (p in taskIO_position) {
+		svgContainer.append("text")
+			.text((uniques.taskIO[p]))
+			.attr("x", function() {return domain_scale("TaskIO") + 75;})
+			.attr("y", function() {return taskIO_position[p];})	
 	}
 
 }
