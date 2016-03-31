@@ -1,4 +1,0 @@
-16/02/29 15:22:37| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
-Running 1 maps.
-Job started: Mon Feb 29 15:22:39 CET 2016
-16/02/29 15:22:39| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
