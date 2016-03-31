@@ -1,0 +1,55 @@
+16/03/05 18:39:12| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+Running 1 maps.
+Job started: Sat Mar 05 18:39:13 CET 2016
+16/03/05 18:39:13| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/03/05 18:39:14| number of splits:1
+16/03/05 18:39:14| mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+16/03/05 18:39:14| Submitting tokens for job: job_1454085119865_1200
+16/03/05 18:39:15| Submitted application application_1454085119865_1200
+16/03/05 18:39:15| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1454085119865_1200/
+16/03/05 18:39:15| Running job: job_1454085119865_1200
+16/03/05 18:39:22| Job job_1454085119865_1200 running in uber mode : false
+16/03/05 18:39:22|  map 0% reduce 0%
+16/03/05 18:39:57|  map 100% reduce 0%
+16/03/05 18:39:57| Job job_1454085119865_1200 completed successfully
+16/03/05 18:39:57| Counters: 32
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=105325
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=150
+		HDFS: Number of bytes written=1102228920
+		HDFS: Number of read operations=4
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Other local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=33377
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=33377
+		Total vcore-seconds taken by all map tasks=33377
+		Total megabyte-seconds taken by all map tasks=34178048
+	Map-Reduce Framework
+		Map input records=1
+		Map output records=1637900
+		Input split bytes=150
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=363
+		CPU time spent (ms)=36580
+		Physical memory (bytes) snapshot=282865664
+		Virtual memory (bytes) snapshot=1528856576
+		Total committed heap usage (bytes)=440926208
+	org.apache.hadoop.examples.RandomTextWriter$Counters
+		BYTES_WRITTEN=1073742486
+		RECORDS_WRITTEN=1637900
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=1102228920
+Job ended: Sat Mar 05 18:39:57 CET 2016
+The job took 44 seconds.

@@ -1,0 +1,121 @@
+16/03/05 16:51:59| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/03/05 16:52:00| Total input paths to process : 1
+16/03/05 16:52:00| number of splits:8
+16/03/05 16:52:00| mapred.reduce.tasks is deprecated. Instead, use mapreduce.job.reduces
+16/03/05 16:52:00| Submitting tokens for job: job_1454085119865_1173
+16/03/05 16:52:01| Submitted application application_1454085119865_1173
+16/03/05 16:52:01| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1454085119865_1173/
+16/03/05 16:52:01| Running job: job_1454085119865_1173
+16/03/05 16:52:11| Job job_1454085119865_1173 running in uber mode : false
+16/03/05 16:52:11|  map 0% reduce 0%
+16/03/05 16:52:23|  map 4% reduce 0%
+16/03/05 16:52:29|  map 7% reduce 0%
+16/03/05 16:52:36|  map 8% reduce 0%
+16/03/05 16:52:39|  map 13% reduce 0%
+16/03/05 16:52:59|  map 14% reduce 0%
+16/03/05 16:53:02|  map 17% reduce 0%
+16/03/05 16:53:03|  map 20% reduce 0%
+16/03/05 16:53:05|  map 23% reduce 0%
+16/03/05 16:53:06|  map 27% reduce 0%
+16/03/05 16:53:10|  map 31% reduce 0%
+16/03/05 16:53:11|  map 34% reduce 0%
+16/03/05 16:53:13|  map 36% reduce 0%
+16/03/05 16:53:14|  map 37% reduce 0%
+16/03/05 16:53:16|  map 39% reduce 0%
+16/03/05 16:53:17|  map 41% reduce 0%
+16/03/05 16:53:20|  map 42% reduce 0%
+16/03/05 16:53:21|  map 47% reduce 0%
+16/03/05 16:53:26|  map 50% reduce 0%
+16/03/05 16:53:29|  map 51% reduce 0%
+16/03/05 16:53:31|  map 52% reduce 0%
+16/03/05 16:53:35|  map 53% reduce 0%
+16/03/05 16:53:37|  map 57% reduce 0%
+16/03/05 16:53:40|  map 60% reduce 0%
+16/03/05 16:53:43|  map 61% reduce 0%
+16/03/05 16:53:46|  map 62% reduce 0%
+16/03/05 16:53:50|  map 66% reduce 0%
+16/03/05 16:54:10|  map 68% reduce 0%
+16/03/05 16:54:13|  map 69% reduce 0%
+16/03/05 16:54:16|  map 70% reduce 0%
+16/03/05 16:54:21|  map 74% reduce 0%
+16/03/05 16:54:26|  map 77% reduce 0%
+16/03/05 16:54:28|  map 78% reduce 0%
+16/03/05 16:54:32|  map 79% reduce 0%
+16/03/05 16:54:33|  map 80% reduce 0%
+16/03/05 16:54:36|  map 84% reduce 0%
+16/03/05 16:54:37|  map 85% reduce 0%
+16/03/05 16:54:39|  map 86% reduce 0%
+16/03/05 16:54:42|  map 88% reduce 0%
+16/03/05 16:54:45|  map 89% reduce 0%
+16/03/05 16:54:48|  map 90% reduce 0%
+16/03/05 16:54:50|  map 90% reduce 6%
+16/03/05 16:54:52|  map 94% reduce 13%
+16/03/05 16:54:53|  map 94% reduce 21%
+16/03/05 16:54:54|  map 94% reduce 27%
+16/03/05 16:54:55|  map 95% reduce 29%
+16/03/05 16:55:08|  map 96% reduce 29%
+16/03/05 16:55:11|  map 100% reduce 29%
+16/03/05 16:55:14|  map 100% reduce 31%
+16/03/05 16:55:15|  map 100% reduce 37%
+16/03/05 16:55:16|  map 100% reduce 61%
+16/03/05 16:55:17|  map 100% reduce 80%
+16/03/05 16:55:19|  map 100% reduce 94%
+16/03/05 16:55:20|  map 100% reduce 100%
+16/03/05 16:55:32| Job job_1454085119865_1173 completed successfully
+16/03/05 16:55:34| Counters: 50
+	File System Counters
+		FILE: Number of bytes read=80429376
+		FILE: Number of bytes written=120612300
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=615957692
+		HDFS: Number of bytes written=26807583
+		HDFS: Number of read operations=60
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=24
+	Job Counters 
+		Killed map tasks=7
+		Launched map tasks=15
+		Launched reduce tasks=12
+		Data-local map tasks=15
+		Total time spent by all maps in occupied slots (ms)=1081633
+		Total time spent by all reduces in occupied slots (ms)=475845
+		Total time spent by all map tasks (ms)=1081633
+		Total time spent by all reduce tasks (ms)=475845
+		Total vcore-seconds taken by all map tasks=1081633
+		Total vcore-seconds taken by all reduce tasks=475845
+		Total megabyte-seconds taken by all map tasks=1107592192
+		Total megabyte-seconds taken by all reduce tasks=487265280
+	Map-Reduce Framework
+		Map input records=270166
+		Map output records=56606749
+		Map output bytes=851625316
+		Map output materialized bytes=38622608
+		Input split bytes=1176
+		Combine input records=58034440
+		Combine output records=2743112
+		Reduce input groups=1021044
+		Reduce shuffle bytes=38622608
+		Reduce input records=1315421
+		Reduce output records=1021044
+		Spilled Records=4058533
+		Shuffled Maps =96
+		Failed Shuffles=0
+		Merged Map outputs=96
+		GC time elapsed (ms)=2249
+		CPU time spent (ms)=286780
+		Physical memory (bytes) snapshot=6344773632
+		Virtual memory (bytes) snapshot=30031757312
+		Total committed heap usage (bytes)=8740929536
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=615956516
+	File Output Format Counters 
+		Bytes Written=26807583

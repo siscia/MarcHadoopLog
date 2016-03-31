@@ -1,0 +1,60 @@
+16/03/12 00:52:58| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+Running 5 maps.
+Job started: Sat Mar 12 00:53:00 CET 2016
+16/03/12 00:53:00| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/03/12 00:53:00| number of splits:5
+16/03/12 00:53:01| mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+16/03/12 00:53:01| Submitting tokens for job: job_1454085119865_1616
+16/03/12 00:53:01| Submitted application application_1454085119865_1616
+16/03/12 00:53:01| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1454085119865_1616/
+16/03/12 00:53:01| Running job: job_1454085119865_1616
+16/03/12 00:53:08| Job job_1454085119865_1616 running in uber mode : false
+16/03/12 00:53:08|  map 0% reduce 0%
+16/03/12 00:53:52|  map 20% reduce 0%
+16/03/12 00:53:53|  map 40% reduce 0%
+16/03/12 00:54:00|  map 60% reduce 0%
+16/03/12 00:54:01|  map 80% reduce 0%
+16/03/12 00:54:30|  map 100% reduce 0%
+16/03/12 00:54:32| Job job_1454085119865_1616 completed successfully
+16/03/12 00:54:32| Counters: 33
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=526625
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=750
+		HDFS: Number of bytes written=5511199974
+		HDFS: Number of read operations=20
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=10
+	Job Counters 
+		Killed map tasks=1
+		Launched map tasks=6
+		Other local map tasks=6
+		Total time spent by all maps in occupied slots (ms)=288356
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=288356
+		Total vcore-seconds taken by all map tasks=288356
+		Total megabyte-seconds taken by all map tasks=295276544
+	Map-Reduce Framework
+		Map input records=5
+		Map output records=8194912
+		Input split bytes=750
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=3028
+		CPU time spent (ms)=260220
+		Physical memory (bytes) snapshot=1661026304
+		Virtual memory (bytes) snapshot=7380709376
+		Total committed heap usage (bytes)=2319974400
+	org.apache.hadoop.examples.RandomTextWriter$Counters
+		BYTES_WRITTEN=5368711005
+		RECORDS_WRITTEN=8194912
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=5511199974
+Job ended: Sat Mar 12 00:54:32 CET 2016
+The job took 92 seconds.
