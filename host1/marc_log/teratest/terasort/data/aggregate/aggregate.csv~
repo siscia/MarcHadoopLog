@@ -600,3 +600,4 @@ replication,blocksize,dimension,start_reduce_percentage,reducers,taskio,start_ti
 2,16640000,400000000,0.5,24,100,1458963891,1458964492,1458965694,1803
 1,99840000,300000000,0.5,12,100,1456442325,1456442480,1456442869,544
 1,66560000,500000000,0.05,12,100,1456143559,1456143625,1456145145,1586
+replication,blocksize,dimension,start_reduce_percentage,reducers,taskio,start_time,start_reduce,end_time,total_time
