@@ -113,6 +113,8 @@ function statistics(d){
 function ready(error, data){
 	if (error) throw error;
 
+	console.log(data.length)
+
 	var replication = new Set();
 	var blocksize = new Set();
 	var dimension = new Set();
@@ -155,17 +157,18 @@ function ready(error, data){
 			.range([1, 100]);
 
 	var color_scale = d3.scale.linear()
-			.domain([minTime, maxTime])
-			.range(["green", "red"])
+			.domain([0, data.length])
+			.range(["lightgreen", "red"])
 
-	function circle(container, coordinates, mean, std) {
+	function circle(container, coordinates, mean, std, dataset_dimension) {
 
 		container.append("g")
 			.append("circle")
 			.attr("cx", coordinates[0])
 			.attr("cy", coordinates[1])
 			.attr("r", radius_scale(mean))
-			.attr("fill-opacity", "0.01")
+       			.attr("fill", color_scale(dataset_dimension))
+			.attr("fill-opacity", "0.88")
 			.attr("stroke", "black");
 
 		container.append("g")
@@ -231,7 +234,7 @@ function ready(error, data){
 		console.log(uniques);
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
-		circle(svgContainer, f, mean, std)
+		circle(svgContainer, f, mean, std, to_plot.length)
 	}
 
 	for (p in replication_position) {
@@ -241,7 +244,7 @@ function ready(error, data){
 				.map(function(d){ return d.total_time;});
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
-		circle(svgContainer, f, mean, std)
+		circle(svgContainer, f, mean, std, to_plot.length)
 	}
 
 	for (p in dimension_position) {
@@ -251,7 +254,7 @@ function ready(error, data){
 				.map(function(d){ return d.total_time;});
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
-		circle(svgContainer, f, mean, std)
+		circle(svgContainer, f, mean, std, to_plot.length)
 	}
 
 	for (p in map_tasks_position) {
@@ -261,7 +264,7 @@ function ready(error, data){
 				.map(function(d){ return d.total_time;});
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
-		circle(svgContainer, f, mean, std)
+		circle(svgContainer, f, mean, std, to_plot.length)
 	}
 
 	for (p in reducers_position) {
@@ -271,7 +274,7 @@ function ready(error, data){
 				.map(function(d){ return d.total_time;});
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
-		circle(svgContainer, f, mean, std)
+		circle(svgContainer, f, mean, std, to_plot.length)
 	}
 	
 	for (p in start_reduce_position) {
@@ -281,7 +284,7 @@ function ready(error, data){
 				.map(function(d){ return d.total_time;});
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
-		circle(svgContainer, f, mean, std)
+		circle(svgContainer, f, mean, std, to_plot.length)
 	}
 
        for (p in start_reduce_position) {
@@ -291,7 +294,7 @@ function ready(error, data){
 				.map(function(d){ return d.total_time;});
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
-		circle(svgContainer, f, mean, std)
+		circle(svgContainer, f, mean, std, to_plot.length)
 	}
 
 
