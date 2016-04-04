@@ -113,8 +113,6 @@ function statistics(d){
 function ready(error, data){
 	if (error) throw error;
 
-	console.log(data.length)
-
 	var replication = new Set();
 	var blocksize = new Set();
 	var dimension = new Set();
@@ -225,73 +223,88 @@ function ready(error, data){
 		foci.taskIO[uniques.taskIO[p]] = {cy: taskIO_position[p], cx: domain_scale("TaskIO")};
 	};
 	
-	
-       for (p in blocksize_position) {
-		f = foci.blocksize[uniques.blocksize[p]];
-		to_plot = data
-				.filter(function(d){return d.blocksize == uniques.blocksize[p];})
-				.map(function(d){ return d.total_time;});
-		console.log(uniques);
-		[mean, variance, std] = statistics(to_plot)
-		f = [f.cx, f.cy];
-		circle(svgContainer, f, mean, std, to_plot.length)
-	}
-
+	console.log("Replication: ");
 	for (p in replication_position) {
 		f = foci.replication[uniques.replication[p]];
 		to_plot = data
 				.filter(function(d){return d.replication == uniques.replication[p];})
 				.map(function(d){ return d.total_time;});
+       		console.log("\t", uniques.replication[p], to_plot.length);
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
 		circle(svgContainer, f, mean, std, to_plot.length)
 	}
-
+ 
+       console.log("Blocksize: ")
+       for (p in blocksize_position) {
+		f = foci.blocksize[uniques.blocksize[p]];
+		to_plot = data
+				.filter(function(d){return d.blocksize == uniques.blocksize[p];})
+				.map(function(d){ return d.total_time;});
+       		console.log("\t", uniques.blocksize[p], to_plot.length);
+		[mean, variance, std] = statistics(to_plot);
+		f = [f.cx, f.cy];
+		circle(svgContainer, f, mean, std, to_plot.length);
+	}
+	
+       
+	console.log("Dimension: ");
 	for (p in dimension_position) {
 		f = foci.dimension[uniques.dimension[p]];
 		to_plot = data
 				.filter(function(d){return d.dimension == uniques.dimension[p];})
 				.map(function(d){ return d.total_time;});
+       		console.log("\t", uniques.dimension[p], to_plot.length);
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
 		circle(svgContainer, f, mean, std, to_plot.length)
 	}
 
+	console.log("mapTasks: ");
 	for (p in map_tasks_position) {
 		f = foci.map_tasks[uniques.mapTasks[p]];
 		to_plot = data
 				.filter(function(d){return d.map_tasks == uniques.mapTasks[p];})
 				.map(function(d){ return d.total_time;});
+       		console.log("\t", uniques.mapTasks[p], to_plot.length);
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
 		circle(svgContainer, f, mean, std, to_plot.length)
 	}
 
-	for (p in reducers_position) {
-		f = foci.reducers[uniques.reducers[p]];
-		to_plot = data
-				.filter(function(d){return d.reducers == uniques.reducers[p];})
-				.map(function(d){ return d.total_time;});
-		[mean, variance, std] = statistics(to_plot)
-		f = [f.cx, f.cy];
-		circle(svgContainer, f, mean, std, to_plot.length)
-	}
 	
+
+	console.log("startReduce: ");
 	for (p in start_reduce_position) {
 		f = foci.start_reduce_percentage[uniques.startReduce[p]];
 		to_plot = data
 				.filter(function(d){return d.start_reduce_percentage == uniques.startReduce[p];})
 				.map(function(d){ return d.total_time;});
+       		console.log("\t", uniques.startReduce[p], to_plot.length);
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
 		circle(svgContainer, f, mean, std, to_plot.length)
 	}
 
+	console.log("Reducers: ");
+	for (p in reducers_position) {
+		f = foci.reducers[uniques.reducers[p]];
+		to_plot = data
+				.filter(function(d){return d.reducers == uniques.reducers[p];})
+				.map(function(d){ return d.total_time;});
+       		console.log("\t", uniques.reducers[p], to_plot.length);
+		[mean, variance, std] = statistics(to_plot)
+		f = [f.cx, f.cy];
+		circle(svgContainer, f, mean, std, to_plot.length)
+	}
+	
+       console.log("TaskIO: ");
        for (p in start_reduce_position) {
 		f = foci.taskIO[uniques.taskIO[p]];
 		to_plot = data
 				.filter(function(d){return d.taskIO == uniques.taskIO[p];})
 				.map(function(d){ return d.total_time;});
+       		console.log("\t", uniques.taskIO[p], to_plot.length);
 		[mean, variance, std] = statistics(to_plot)
 		f = [f.cx, f.cy];
 		circle(svgContainer, f, mean, std, to_plot.length)
