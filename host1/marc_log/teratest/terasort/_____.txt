@@ -1,0 +1,7 @@
+16/03/30 15:59:17| starting
+16/03/30 15:59:19| Total input paths to process : 0
+Spent 197ms computing base-splits.
+Spent 4ms computing TeraScheduler splits.
+Computing input splits took 203ms
+Sampling 0 splits of 0
+16/03/30 15:59:19| / by zero
