@@ -1,0 +1,99 @@
+16/05/29 14:58:26| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/05/29 14:58:27| Generating 68478432 using 50
+16/05/29 14:58:27| number of splits:50
+16/05/29 14:58:27| mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+16/05/29 14:58:27| Submitting tokens for job: job_1464359574408_0129
+16/05/29 14:58:28| Submitted application application_1464359574408_0129
+16/05/29 14:58:28| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1464359574408_0129/
+16/05/29 14:58:28| Running job: job_1464359574408_0129
+16/05/29 14:58:36| Job job_1464359574408_0129 running in uber mode : false
+16/05/29 14:58:36|  map 0% reduce 0%
+16/05/29 14:58:48|  map 3% reduce 0%
+16/05/29 14:58:49|  map 4% reduce 0%
+16/05/29 14:58:51|  map 10% reduce 0%
+16/05/29 14:58:52|  map 13% reduce 0%
+16/05/29 14:58:54|  map 17% reduce 0%
+16/05/29 14:58:55|  map 21% reduce 0%
+16/05/29 14:58:57|  map 26% reduce 0%
+16/05/29 14:58:58|  map 29% reduce 0%
+16/05/29 14:58:59|  map 33% reduce 0%
+16/05/29 14:59:01|  map 35% reduce 0%
+16/05/29 14:59:02|  map 36% reduce 0%
+16/05/29 14:59:06|  map 39% reduce 0%
+16/05/29 14:59:07|  map 42% reduce 0%
+16/05/29 14:59:10|  map 45% reduce 0%
+16/05/29 14:59:12|  map 47% reduce 0%
+16/05/29 14:59:13|  map 50% reduce 0%
+16/05/29 14:59:14|  map 52% reduce 0%
+16/05/29 14:59:15|  map 54% reduce 0%
+16/05/29 14:59:16|  map 61% reduce 0%
+16/05/29 14:59:18|  map 62% reduce 0%
+16/05/29 14:59:20|  map 64% reduce 0%
+16/05/29 14:59:21|  map 65% reduce 0%
+16/05/29 14:59:22|  map 67% reduce 0%
+16/05/29 14:59:23|  map 68% reduce 0%
+16/05/29 14:59:24|  map 69% reduce 0%
+16/05/29 14:59:25|  map 70% reduce 0%
+16/05/29 14:59:26|  map 71% reduce 0%
+16/05/29 14:59:28|  map 72% reduce 0%
+16/05/29 14:59:29|  map 73% reduce 0%
+16/05/29 14:59:30|  map 74% reduce 0%
+16/05/29 14:59:32|  map 76% reduce 0%
+16/05/29 14:59:34|  map 77% reduce 0%
+16/05/29 14:59:36|  map 78% reduce 0%
+16/05/29 14:59:37|  map 79% reduce 0%
+16/05/29 14:59:38|  map 81% reduce 0%
+16/05/29 14:59:39|  map 83% reduce 0%
+16/05/29 14:59:41|  map 86% reduce 0%
+16/05/29 14:59:42|  map 87% reduce 0%
+16/05/29 14:59:43|  map 88% reduce 0%
+16/05/29 14:59:44|  map 89% reduce 0%
+16/05/29 14:59:45|  map 91% reduce 0%
+16/05/29 14:59:47|  map 93% reduce 0%
+16/05/29 14:59:48|  map 94% reduce 0%
+16/05/29 14:59:51|  map 95% reduce 0%
+16/05/29 14:59:52|  map 96% reduce 0%
+16/05/29 14:59:53|  map 97% reduce 0%
+16/05/29 14:59:55|  map 98% reduce 0%
+16/05/29 14:59:56|  map 99% reduce 0%
+16/05/29 14:59:58|  map 100% reduce 0%
+16/05/29 14:59:59| Job job_1464359574408_0129 completed successfully
+16/05/29 14:59:59| Counters: 32
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=5272190
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=4284
+		HDFS: Number of bytes written=6847843200
+		HDFS: Number of read operations=200
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=100
+	Job Counters 
+		Killed map tasks=2
+		Launched map tasks=52
+		Other local map tasks=52
+		Total time spent by all maps in occupied slots (ms)=1827424
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=1827424
+		Total vcore-seconds taken by all map tasks=1827424
+		Total megabyte-seconds taken by all map tasks=1871282176
+	Map-Reduce Framework
+		Map input records=68478432
+		Map output records=68478432
+		Input split bytes=4284
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=23570
+		CPU time spent (ms)=435650
+		Physical memory (bytes) snapshot=15545839616
+		Virtual memory (bytes) snapshot=74589327360
+		Total committed heap usage (bytes)=25796542464
+	org.apache.hadoop.examples.terasort.TeraGen$Counters
+		CHECKSUM=147071566728265850
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=6847843200

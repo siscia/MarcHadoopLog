@@ -1,0 +1,104 @@
+16/05/29 15:45:21| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/05/29 15:45:22| Generating 68478432 using 50
+16/05/29 15:45:22| number of splits:50
+16/05/29 15:45:22| mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+16/05/29 15:45:22| Submitting tokens for job: job_1464359574408_0139
+16/05/29 15:45:22| Submitted application application_1464359574408_0139
+16/05/29 15:45:22| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1464359574408_0139/
+16/05/29 15:45:22| Running job: job_1464359574408_0139
+16/05/29 15:45:31| Job job_1464359574408_0139 running in uber mode : false
+16/05/29 15:45:31|  map 0% reduce 0%
+16/05/29 15:45:44|  map 1% reduce 0%
+16/05/29 15:45:45|  map 7% reduce 0%
+16/05/29 15:45:47|  map 13% reduce 0%
+16/05/29 15:45:48|  map 14% reduce 0%
+16/05/29 15:45:49|  map 18% reduce 0%
+16/05/29 15:45:51|  map 20% reduce 0%
+16/05/29 15:45:53|  map 23% reduce 0%
+16/05/29 15:45:54|  map 31% reduce 0%
+16/05/29 15:45:56|  map 34% reduce 0%
+16/05/29 15:45:58|  map 35% reduce 0%
+16/05/29 15:46:01|  map 36% reduce 0%
+16/05/29 15:46:02|  map 38% reduce 0%
+16/05/29 15:46:03|  map 39% reduce 0%
+16/05/29 15:46:05|  map 41% reduce 0%
+16/05/29 15:46:07|  map 42% reduce 0%
+16/05/29 15:46:08|  map 44% reduce 0%
+16/05/29 15:46:09|  map 46% reduce 0%
+16/05/29 15:46:10|  map 49% reduce 0%
+16/05/29 15:46:12|  map 51% reduce 0%
+16/05/29 15:46:13|  map 52% reduce 0%
+16/05/29 15:46:16|  map 55% reduce 0%
+16/05/29 15:46:18|  map 56% reduce 0%
+16/05/29 15:46:20|  map 57% reduce 0%
+16/05/29 15:46:23|  map 60% reduce 0%
+16/05/29 15:46:24|  map 61% reduce 0%
+16/05/29 15:46:25|  map 64% reduce 0%
+16/05/29 15:46:26|  map 65% reduce 0%
+16/05/29 15:46:28|  map 66% reduce 0%
+16/05/29 15:46:29|  map 67% reduce 0%
+16/05/29 15:46:31|  map 68% reduce 0%
+16/05/29 15:46:32|  map 69% reduce 0%
+16/05/29 15:46:35|  map 71% reduce 0%
+16/05/29 15:46:36|  map 72% reduce 0%
+16/05/29 15:46:37|  map 73% reduce 0%
+16/05/29 15:46:38|  map 75% reduce 0%
+16/05/29 15:46:39|  map 76% reduce 0%
+16/05/29 15:46:40|  map 77% reduce 0%
+16/05/29 15:46:41|  map 79% reduce 0%
+16/05/29 15:46:42|  map 81% reduce 0%
+16/05/29 15:46:43|  map 82% reduce 0%
+16/05/29 15:46:44|  map 83% reduce 0%
+16/05/29 15:46:45|  map 84% reduce 0%
+16/05/29 15:46:46|  map 85% reduce 0%
+16/05/29 15:46:48|  map 86% reduce 0%
+16/05/29 15:46:49|  map 88% reduce 0%
+16/05/29 15:46:50|  map 89% reduce 0%
+16/05/29 15:46:51|  map 90% reduce 0%
+16/05/29 15:46:52|  map 91% reduce 0%
+16/05/29 15:46:53|  map 93% reduce 0%
+16/05/29 15:46:55|  map 95% reduce 0%
+16/05/29 15:46:56|  map 96% reduce 0%
+16/05/29 15:46:57|  map 97% reduce 0%
+16/05/29 15:47:00|  map 99% reduce 0%
+16/05/29 15:47:02|  map 100% reduce 0%
+16/05/29 15:47:07| Job job_1464359574408_0139 completed successfully
+16/05/29 15:47:07| Counters: 32
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=5272190
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=4284
+		HDFS: Number of bytes written=6847843200
+		HDFS: Number of read operations=200
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=100
+	Job Counters 
+		Killed map tasks=3
+		Launched map tasks=53
+		Other local map tasks=53
+		Total time spent by all maps in occupied slots (ms)=2308715
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=2308715
+		Total vcore-seconds taken by all map tasks=2308715
+		Total megabyte-seconds taken by all map tasks=2364124160
+	Map-Reduce Framework
+		Map input records=68478432
+		Map output records=68478432
+		Input split bytes=4284
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=24977
+		CPU time spent (ms)=484130
+		Physical memory (bytes) snapshot=15606968320
+		Virtual memory (bytes) snapshot=74559234048
+		Total committed heap usage (bytes)=25619857408
+	org.apache.hadoop.examples.terasort.TeraGen$Counters
+		CHECKSUM=147071566728265850
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=6847843200

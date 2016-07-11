@@ -1,0 +1,2 @@
+16/04/30 10:25:32| starting
+16/04/30 10:25:33| Failed on local exception: java.net.SocketException: Network is unreachable; Host Details : local host is: "clovertown00/131.175.14.9"; destination host is: "mazzu1.local.necst.it":9000; 

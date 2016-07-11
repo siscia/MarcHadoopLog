@@ -1,0 +1,2 @@
+16/05/01 16:55:12| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/05/01 16:55:13| Cleaning up the staging area /mapred/root/.staging/job_1454085119865_2589

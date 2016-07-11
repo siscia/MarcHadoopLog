@@ -1,0 +1,11 @@
+Retrieve logs for completed YARN applications.
+usage: yarn logs -applicationId <application ID> [OPTIONS]
+
+general options are:
+ -appOwner <Application Owner>   AppOwner (assumed to be current user if
+                                 not specified)
+ -containerId <Container ID>     ContainerId (must be specified if node
+                                 address is specified)
+ -nodeAddress <Node Address>     NodeAddress in the format nodename:port
+                                 (must be specified if container id is
+                                 specified)

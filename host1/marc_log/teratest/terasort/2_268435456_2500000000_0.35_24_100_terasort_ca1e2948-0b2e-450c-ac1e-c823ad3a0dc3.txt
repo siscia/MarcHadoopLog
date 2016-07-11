@@ -1,0 +1,2 @@
+16/05/01 17:00:59| starting
+16/05/01 17:01:01| Input path does not exist: hdfs://mazzu1.local.necst.it:9000/user/root/2_268435456_2500000000_0.35_24_100

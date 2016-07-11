@@ -1,0 +1,12 @@
+16/04/30 10:29:13| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/04/30 10:29:14| Generating 3000000000 using 50
+16/04/30 10:29:14| number of splits:50
+16/04/30 10:29:14| mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+16/04/30 10:29:15| Submitting tokens for job: job_1454085119865_2570
+16/04/30 10:29:15| Submitted application application_1454085119865_2570
+16/04/30 10:29:15| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1454085119865_2570/
+16/04/30 10:29:15| Running job: job_1454085119865_2570
+16/04/30 17:05:11| Job job_1454085119865_2570 running in uber mode : false
+16/04/30 17:05:11|  map 0% reduce 0%
+16/04/30 17:06:06| Job job_1454085119865_2570 failed with state KILLED due to: Application killed by user.
+16/04/30 17:06:06| Counters: 0

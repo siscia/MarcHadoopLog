@@ -74,7 +74,10 @@
 	    <timestamp-feature ref="time"/>
 	</phase0>
 	<phase1>
-	    <manipulation></manipulation>
+	    <manipulation/>
+            <features>
+	        <all-as-is/>
+	    </features>
 	</phase1>
 	<phase2a>
 	    <configuration>

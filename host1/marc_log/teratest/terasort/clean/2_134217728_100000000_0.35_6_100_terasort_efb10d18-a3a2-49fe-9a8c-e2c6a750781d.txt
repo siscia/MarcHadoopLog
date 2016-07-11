@@ -1,0 +1,192 @@
+16/05/27 18:15:42| starting
+16/05/27 18:15:44| Total input paths to process : 50
+Spent 297ms computing base-splits.
+Spent 5ms computing TeraScheduler splits.
+Computing input splits took 304ms
+Sampling 10 splits of 100
+Making 6 from 100000 sampled records
+Computing parititions took 807ms
+Spent 1115ms computing partitions.
+16/05/27 18:15:45| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/05/27 18:15:46| number of splits:100
+16/05/27 18:15:46| mapred.reduce.tasks is deprecated. Instead, use mapreduce.job.reduces
+16/05/27 18:15:46| Submitting tokens for job: job_1464359574408_0006
+16/05/27 18:15:46| Submitted application application_1464359574408_0006
+16/05/27 18:15:46| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1464359574408_0006/
+16/05/27 18:15:46| Running job: job_1464359574408_0006
+16/05/27 18:15:53| Job job_1464359574408_0006 running in uber mode : false
+16/05/27 18:15:53|  map 0% reduce 0%
+16/05/27 18:16:09|  map 2% reduce 0%
+16/05/27 18:16:10|  map 5% reduce 0%
+16/05/27 18:16:11|  map 10% reduce 0%
+16/05/27 18:16:12|  map 11% reduce 0%
+16/05/27 18:16:13|  map 12% reduce 0%
+16/05/27 18:16:14|  map 15% reduce 0%
+16/05/27 18:16:15|  map 16% reduce 0%
+16/05/27 18:16:17|  map 17% reduce 0%
+16/05/27 18:16:18|  map 18% reduce 0%
+16/05/27 18:16:19|  map 19% reduce 0%
+16/05/27 18:16:20|  map 23% reduce 0%
+16/05/27 18:16:31|  map 24% reduce 0%
+16/05/27 18:16:32|  map 25% reduce 0%
+16/05/27 18:16:33|  map 26% reduce 0%
+16/05/27 18:16:34|  map 28% reduce 0%
+16/05/27 18:16:35|  map 29% reduce 0%
+16/05/27 18:16:36|  map 30% reduce 0%
+16/05/27 18:16:37|  map 35% reduce 0%
+16/05/27 18:16:38|  map 40% reduce 0%
+16/05/27 18:16:39|  map 41% reduce 0%
+16/05/27 18:16:40|  map 43% reduce 0%
+16/05/27 18:16:41|  map 44% reduce 0%
+16/05/27 18:16:42|  map 45% reduce 0%
+16/05/27 18:16:43|  map 46% reduce 0%
+16/05/27 18:16:44|  map 47% reduce 0%
+16/05/27 18:16:45|  map 48% reduce 0%
+16/05/27 18:16:46|  map 49% reduce 0%
+16/05/27 18:16:47|  map 50% reduce 0%
+16/05/27 18:16:51|  map 52% reduce 0%
+16/05/27 18:16:52|  map 56% reduce 0%
+16/05/27 18:16:53|  map 57% reduce 0%
+16/05/27 18:16:54|  map 59% reduce 0%
+16/05/27 18:16:55|  map 61% reduce 1%
+16/05/27 18:16:56|  map 62% reduce 1%
+16/05/27 18:16:57|  map 63% reduce 4%
+16/05/27 18:16:59|  map 63% reduce 5%
+16/05/27 18:17:01|  map 64% reduce 8%
+16/05/27 18:17:02|  map 66% reduce 8%
+16/05/27 18:17:03|  map 68% reduce 9%
+16/05/27 18:17:04|  map 70% reduce 10%
+16/05/27 18:17:05|  map 71% reduce 10%
+16/05/27 18:17:07|  map 71% reduce 11%
+16/05/27 18:17:09|  map 74% reduce 12%
+16/05/27 18:17:10|  map 78% reduce 12%
+16/05/27 18:17:11|  map 81% reduce 13%
+16/05/27 18:17:12|  map 81% reduce 14%
+16/05/27 18:17:14|  map 81% reduce 15%
+16/05/27 18:17:15|  map 82% reduce 15%
+16/05/27 18:17:16|  map 82% reduce 17%
+16/05/27 18:17:17|  map 83% reduce 18%
+16/05/27 18:17:19|  map 85% reduce 19%
+16/05/27 18:17:20|  map 88% reduce 19%
+16/05/27 18:17:21|  map 89% reduce 20%
+16/05/27 18:17:22|  map 91% reduce 20%
+16/05/27 18:17:23|  map 91% reduce 21%
+16/05/27 18:17:25|  map 92% reduce 22%
+16/05/27 18:17:26|  map 92% reduce 24%
+16/05/27 18:17:28|  map 92% reduce 25%
+16/05/27 18:17:29|  map 92% reduce 26%
+16/05/27 18:17:30|  map 92% reduce 27%
+16/05/27 18:17:32|  map 92% reduce 28%
+16/05/27 18:17:34|  map 92% reduce 29%
+16/05/27 18:17:36|  map 92% reduce 30%
+16/05/27 18:17:39|  map 92% reduce 31%
+16/05/27 18:17:42|  map 93% reduce 31%
+16/05/27 18:17:54|  map 94% reduce 31%
+16/05/27 18:17:55|  map 95% reduce 31%
+16/05/27 18:17:58|  map 96% reduce 31%
+16/05/27 18:17:59|  map 97% reduce 31%
+16/05/27 18:18:01|  map 98% reduce 31%
+16/05/27 18:18:04|  map 99% reduce 31%
+16/05/27 18:18:05|  map 100% reduce 31%
+16/05/27 18:18:06|  map 100% reduce 32%
+16/05/27 18:18:07|  map 100% reduce 34%
+16/05/27 18:18:09|  map 100% reduce 38%
+16/05/27 18:18:10|  map 100% reduce 44%
+16/05/27 18:18:11|  map 100% reduce 50%
+16/05/27 18:18:12|  map 100% reduce 56%
+16/05/27 18:18:13|  map 100% reduce 60%
+16/05/27 18:18:14|  map 100% reduce 63%
+16/05/27 18:18:15|  map 100% reduce 67%
+16/05/27 18:18:16|  map 100% reduce 68%
+16/05/27 18:18:18|  map 100% reduce 69%
+16/05/27 18:18:19|  map 100% reduce 70%
+16/05/27 18:18:20|  map 100% reduce 71%
+16/05/27 18:18:22|  map 100% reduce 72%
+16/05/27 18:18:23|  map 100% reduce 73%
+16/05/27 18:18:24|  map 100% reduce 74%
+16/05/27 18:18:26|  map 100% reduce 75%
+16/05/27 18:18:27|  map 100% reduce 76%
+16/05/27 18:18:28|  map 100% reduce 77%
+16/05/27 18:18:30|  map 100% reduce 78%
+16/05/27 18:18:31|  map 100% reduce 79%
+16/05/27 18:18:33|  map 100% reduce 80%
+16/05/27 18:18:34|  map 100% reduce 81%
+16/05/27 18:18:35|  map 100% reduce 82%
+16/05/27 18:18:36|  map 100% reduce 83%
+16/05/27 18:18:38|  map 100% reduce 84%
+16/05/27 18:18:39|  map 100% reduce 85%
+16/05/27 18:18:41|  map 100% reduce 86%
+16/05/27 18:18:43|  map 100% reduce 87%
+16/05/27 18:18:44|  map 100% reduce 88%
+16/05/27 18:18:46|  map 100% reduce 89%
+16/05/27 18:18:47|  map 100% reduce 90%
+16/05/27 18:18:49|  map 100% reduce 91%
+16/05/27 18:18:50|  map 100% reduce 92%
+16/05/27 18:18:52|  map 100% reduce 93%
+16/05/27 18:18:53|  map 100% reduce 94%
+16/05/27 18:18:55|  map 100% reduce 95%
+16/05/27 18:18:56|  map 100% reduce 96%
+16/05/27 18:18:57|  map 100% reduce 97%
+16/05/27 18:18:58|  map 100% reduce 98%
+16/05/27 18:19:01|  map 100% reduce 99%
+16/05/27 18:19:04|  map 100% reduce 100%
+16/05/27 18:19:14| Job job_1464359574408_0006 completed successfully
+16/05/27 18:19:14| Counters: 51
+	File System Counters
+		FILE: Number of bytes read=17380341864
+		FILE: Number of bytes written=27790678684
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=10000015400
+		HDFS: Number of bytes written=10000000000
+		HDFS: Number of read operations=318
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=12
+	Job Counters 
+		Killed map tasks=4
+		Launched map tasks=104
+		Launched reduce tasks=6
+		Data-local map tasks=99
+		Rack-local map tasks=5
+		Total time spent by all maps in occupied slots (ms)=2584613
+		Total time spent by all reduces in occupied slots (ms)=823308
+		Total time spent by all map tasks (ms)=2584613
+		Total time spent by all reduce tasks (ms)=823308
+		Total vcore-seconds taken by all map tasks=2584613
+		Total vcore-seconds taken by all reduce tasks=823308
+		Total megabyte-seconds taken by all map tasks=2646643712
+		Total megabyte-seconds taken by all reduce tasks=843067392
+	Map-Reduce Framework
+		Map input records=100000000
+		Map output records=100000000
+		Map output bytes=10200000000
+		Map output materialized bytes=10400003600
+		Input split bytes=15400
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=100000000
+		Reduce shuffle bytes=10400003600
+		Reduce input records=100000000
+		Reduce output records=100000000
+		Spilled Records=267108900
+		Shuffled Maps =600
+		Failed Shuffles=0
+		Merged Map outputs=600
+		GC time elapsed (ms)=84854
+		CPU time spent (ms)=1959070
+		Physical memory (bytes) snapshot=42715029504
+		Virtual memory (bytes) snapshot=157595377664
+		Total committed heap usage (bytes)=55483301888
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=10000000000
+	File Output Format Counters 
+		Bytes Written=10000000000
+16/05/27 18:19:14| done

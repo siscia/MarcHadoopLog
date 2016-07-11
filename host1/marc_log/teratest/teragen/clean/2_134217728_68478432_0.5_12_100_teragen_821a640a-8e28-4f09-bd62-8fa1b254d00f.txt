@@ -1,0 +1,100 @@
+16/05/29 15:17:10| Connecting to ResourceManager at mazzu1.local.necst.it/131.175.14.9:8032
+16/05/29 15:17:12| Generating 68478432 using 50
+16/05/29 15:17:12| number of splits:50
+16/05/29 15:17:12| mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+16/05/29 15:17:12| Submitting tokens for job: job_1464359574408_0133
+16/05/29 15:17:12| Submitted application application_1464359574408_0133
+16/05/29 15:17:12| The url to track the job: http://mazzu1.local.necst.it:8081/proxy/application_1464359574408_0133/
+16/05/29 15:17:12| Running job: job_1464359574408_0133
+16/05/29 15:17:20| Job job_1464359574408_0133 running in uber mode : false
+16/05/29 15:17:20|  map 0% reduce 0%
+16/05/29 15:17:32|  map 4% reduce 0%
+16/05/29 15:17:33|  map 7% reduce 0%
+16/05/29 15:17:35|  map 9% reduce 0%
+16/05/29 15:17:36|  map 14% reduce 0%
+16/05/29 15:17:37|  map 16% reduce 0%
+16/05/29 15:17:38|  map 19% reduce 0%
+16/05/29 15:17:39|  map 23% reduce 0%
+16/05/29 15:17:40|  map 26% reduce 0%
+16/05/29 15:17:41|  map 29% reduce 0%
+16/05/29 15:17:42|  map 36% reduce 0%
+16/05/29 15:17:43|  map 37% reduce 0%
+16/05/29 15:17:44|  map 40% reduce 0%
+16/05/29 15:17:47|  map 42% reduce 0%
+16/05/29 15:17:49|  map 44% reduce 0%
+16/05/29 15:17:50|  map 47% reduce 0%
+16/05/29 15:17:51|  map 49% reduce 0%
+16/05/29 15:17:54|  map 52% reduce 0%
+16/05/29 15:17:55|  map 57% reduce 0%
+16/05/29 15:17:56|  map 62% reduce 0%
+16/05/29 15:17:57|  map 66% reduce 0%
+16/05/29 15:17:58|  map 68% reduce 0%
+16/05/29 15:17:59|  map 69% reduce 0%
+16/05/29 15:18:02|  map 70% reduce 0%
+16/05/29 15:18:05|  map 71% reduce 0%
+16/05/29 15:18:08|  map 72% reduce 0%
+16/05/29 15:18:09|  map 73% reduce 0%
+16/05/29 15:18:12|  map 74% reduce 0%
+16/05/29 15:18:13|  map 75% reduce 0%
+16/05/29 15:18:15|  map 76% reduce 0%
+16/05/29 15:18:17|  map 77% reduce 0%
+16/05/29 15:18:19|  map 78% reduce 0%
+16/05/29 15:18:20|  map 79% reduce 0%
+16/05/29 15:18:21|  map 80% reduce 0%
+16/05/29 15:18:22|  map 81% reduce 0%
+16/05/29 15:18:23|  map 83% reduce 0%
+16/05/29 15:18:24|  map 84% reduce 0%
+16/05/29 15:18:26|  map 86% reduce 0%
+16/05/29 15:18:27|  map 87% reduce 0%
+16/05/29 15:18:28|  map 88% reduce 0%
+16/05/29 15:18:29|  map 89% reduce 0%
+16/05/29 15:18:30|  map 90% reduce 0%
+16/05/29 15:18:31|  map 92% reduce 0%
+16/05/29 15:18:32|  map 93% reduce 0%
+16/05/29 15:18:33|  map 94% reduce 0%
+16/05/29 15:18:34|  map 95% reduce 0%
+16/05/29 15:18:35|  map 96% reduce 0%
+16/05/29 15:18:36|  map 97% reduce 0%
+16/05/29 15:18:39|  map 98% reduce 0%
+16/05/29 15:18:40|  map 99% reduce 0%
+16/05/29 15:18:43|  map 100% reduce 0%
+16/05/29 15:18:44| Job job_1464359574408_0133 completed successfully
+16/05/29 15:18:44| Counters: 32
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=5272190
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=4284
+		HDFS: Number of bytes written=6847843200
+		HDFS: Number of read operations=200
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=100
+	Job Counters 
+		Killed map tasks=4
+		Launched map tasks=54
+		Other local map tasks=54
+		Total time spent by all maps in occupied slots (ms)=1740445
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=1740445
+		Total vcore-seconds taken by all map tasks=1740445
+		Total megabyte-seconds taken by all map tasks=1782215680
+	Map-Reduce Framework
+		Map input records=68478432
+		Map output records=68478432
+		Input split bytes=4284
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=30164
+		CPU time spent (ms)=475800
+		Physical memory (bytes) snapshot=15904886784
+		Virtual memory (bytes) snapshot=74694881280
+		Total committed heap usage (bytes)=26547322880
+	org.apache.hadoop.examples.terasort.TeraGen$Counters
+		CHECKSUM=147071566728265850
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=6847843200

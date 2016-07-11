@@ -308,7 +308,7 @@ d3.csv(dataUrl())
 		d.blocksize = +d.blocksize;
 		d.dimension = +d.dimension;
 		d.start_reduce_percentage = +d.start_reduce_percentage;
-		d.total_time = +d.total_time;
+		d.total_time = +d.total_time / d.dimension;
 		return d;})
 	.get(ready);
 
